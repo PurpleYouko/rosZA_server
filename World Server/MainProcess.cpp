@@ -355,13 +355,16 @@ PVOID MapProcess( PVOID TS )
                     }
 
                     //PY doing TD stuff
-                    if(monster->TD && map->id < 100)  //too many damn maps when we include Pedion.)
+                    //this conditional will stop any TD monsters from existing
+                    if(monster->TD == true)
+                        monster->TD = false;
+                    if(monster->TD == true && map->id < 100)  //too many damn maps when we include Pedion.)
                     {
                         //if monster is at the current target waypoint it needs to head to the next one or commit suicide.
                         monster->UpdatePosition(false);
                         if(monster->Position->current.x == monster->Position->destiny.x && monster->Position->current.y == monster->Position->destiny.y)
                         { //reached a waypoint
-                            Log(MSG_WARNING,"reached waypoint.current position %f %f",monster->Position->destiny.x,monster->Position->destiny.y);
+                            Log(MSG_WARNING,"monster of type %i reached waypoint.current position %f %f",monster->montype,monster->Position->destiny.x,monster->Position->destiny.y);
                             if(GServer->WPList[map->id][monster->NextWayPoint].WPType == 3)
                             {
                                 //it's the final point
