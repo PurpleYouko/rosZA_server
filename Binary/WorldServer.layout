@@ -7,13 +7,13 @@
 	<File name="..\Common\SocketClient.cpp" open="0" top="0" tabpos="14">
 		<Cursor position="6392" topLine="161" />
 	</File>
-	<File name="..\Common\SocketServer.cpp" open="1" top="0" tabpos="21">
+	<File name="..\Common\SocketServer.cpp" open="1" top="0" tabpos="15">
 		<Cursor position="8308" topLine="287" />
 	</File>
-	<File name="..\Common\log.cpp" open="1" top="0" tabpos="15">
+	<File name="..\Common\log.cpp" open="1" top="0" tabpos="9">
 		<Cursor position="1692" topLine="44" />
 	</File>
-	<File name="..\Common\log.h" open="1" top="0" tabpos="16">
+	<File name="..\Common\log.h" open="1" top="0" tabpos="10">
 		<Cursor position="4388" topLine="82" />
 	</File>
 	<File name="..\Common\rosecrypt.cpp" open="0" top="0" tabpos="21">
@@ -25,8 +25,8 @@
 	<File name="..\World Server\Buff.cpp" open="0" top="0" tabpos="12">
 		<Cursor position="22614" topLine="411" />
 	</File>
-	<File name="..\World Server\MainProcess.cpp" open="1" top="1" tabpos="6">
-		<Cursor position="17245" topLine="335" />
+	<File name="..\World Server\MainProcess.cpp" open="1" top="0" tabpos="5">
+		<Cursor position="25416" topLine="483" />
 	</File>
 	<File name="..\World Server\Monster.cpp" open="0" top="0" tabpos="12">
 		<Cursor position="5551" topLine="173" />
@@ -40,32 +40,32 @@
 	<File name="..\World Server\Party.cpp" open="0" top="0" tabpos="16">
 		<Cursor position="1358" topLine="26" />
 	</File>
-	<File name="..\World Server\ServerFunctions.cpp" open="1" top="0" tabpos="14">
+	<File name="..\World Server\ServerFunctions.cpp" open="1" top="0" tabpos="8">
 		<Cursor position="50347" topLine="1402" />
 	</File>
 	<File name="..\World Server\Signal.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="1054" topLine="3" />
 	</File>
-	<File name="..\World Server\WorldMonster.cpp" open="0" top="0" tabpos="3">
-		<Cursor position="1448" topLine="13" />
+	<File name="..\World Server\WorldMonster.cpp" open="1" top="0" tabpos="16">
+		<Cursor position="1448" topLine="11" />
 	</File>
 	<File name="..\World Server\WorldMonster.h" open="0" top="0" tabpos="5">
 		<Cursor position="3195" topLine="44" />
 	</File>
-	<File name="..\World Server\WorldServer.h" open="1" top="0" tabpos="17">
-		<Cursor position="38836" topLine="703" />
+	<File name="..\World Server\WorldServer.h" open="1" top="0" tabpos="11">
+		<Cursor position="38620" topLine="703" />
 	</File>
-	<File name="..\World Server\Worldprocess.cpp" open="1" top="0" tabpos="9">
-		<Cursor position="2920" topLine="35" />
+	<File name="..\World Server\Worldprocess.cpp" open="1" top="0" tabpos="6">
+		<Cursor position="1264" topLine="10" />
 	</File>
 	<File name="..\World Server\aip\AiActions.cpp" open="0" top="0" tabpos="7">
-		<Cursor position="25398" topLine="696" />
+		<Cursor position="25259" topLine="1583" />
 	</File>
 	<File name="..\World Server\aip\AiActions.h" open="0" top="0" tabpos="8">
 		<Cursor position="1977" topLine="13" />
 	</File>
-	<File name="..\World Server\aip\AiConditions.cpp" open="1" top="0" tabpos="4">
-		<Cursor position="24044" topLine="778" />
+	<File name="..\World Server\aip\AiConditions.cpp" open="0" top="0" tabpos="4">
+		<Cursor position="23418" topLine="276" />
 	</File>
 	<File name="..\World Server\aip\AiConditions.h" open="0" top="0" tabpos="6">
 		<Cursor position="1955" topLine="102" />
@@ -77,7 +77,7 @@
 		<Cursor position="1204" topLine="9" />
 	</File>
 	<File name="..\World Server\battle.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="24557" topLine="633" />
+		<Cursor position="32168" topLine="821" />
 	</File>
 	<File name="..\World Server\character.cpp" open="0" top="0" tabpos="8">
 		<Cursor position="4489" topLine="219" />
@@ -109,13 +109,13 @@
 	<File name="..\World Server\extrafunctions.cpp" open="0" top="0" tabpos="19">
 		<Cursor position="94090" topLine="932" />
 	</File>
-	<File name="..\World Server\gmcmds.cpp" open="1" top="0" tabpos="5">
-		<Cursor position="66582" topLine="1787" />
+	<File name="..\World Server\gmcmds.cpp" open="1" top="1" tabpos="4">
+		<Cursor position="54359" topLine="1397" />
 	</File>
 	<File name="..\World Server\main.cpp" open="0" top="0" tabpos="3">
 		<Cursor position="1173" topLine="30" />
 	</File>
-	<File name="..\World Server\mapfunctions.cpp" open="1" top="0" tabpos="18">
+	<File name="..\World Server\mapfunctions.cpp" open="1" top="0" tabpos="12">
 		<Cursor position="2705" topLine="60" />
 	</File>
 	<File name="..\World Server\monsterfunctions.cpp" open="0" top="0" tabpos="15">
@@ -130,13 +130,13 @@
 	<File name="..\World Server\playerdata.cpp" open="0" top="0" tabpos="12">
 		<Cursor position="1071" topLine="16" />
 	</File>
-	<File name="..\World Server\playerfunctions.cpp" open="1" top="0" tabpos="10">
+	<File name="..\World Server\playerfunctions.cpp" open="1" top="0" tabpos="7">
 		<Cursor position="75466" topLine="2057" />
 	</File>
 	<File name="..\World Server\playerstats.cpp" open="0" top="0" tabpos="8">
 		<Cursor position="107578" topLine="2513" />
 	</File>
-	<File name="..\World Server\quest\QuestActions.cpp" open="1" top="0" tabpos="11">
+	<File name="..\World Server\quest\QuestActions.cpp" open="0" top="0" tabpos="11">
 		<Cursor position="41459" topLine="1224" />
 	</File>
 	<File name="..\World Server\quest\QuestActions.h" open="0" top="0" tabpos="14">
@@ -145,10 +145,10 @@
 	<File name="..\World Server\quest\QuestActionsC.cpp" open="0" top="0" tabpos="4">
 		<Cursor position="16505" topLine="511" />
 	</File>
-	<File name="..\World Server\quest\QuestConditions.cpp" open="1" top="0" tabpos="12">
-		<Cursor position="22897" topLine="556" />
+	<File name="..\World Server\quest\QuestConditions.cpp" open="0" top="0" tabpos="12">
+		<Cursor position="31838" topLine="15" />
 	</File>
-	<File name="..\World Server\quest\QuestConditions.h" open="1" top="0" tabpos="13">
+	<File name="..\World Server\quest\QuestConditions.h" open="0" top="0" tabpos="13">
 		<Cursor position="3888" topLine="140" />
 	</File>
 	<File name="..\World Server\quest\QuestConditionsC.cpp" open="0" top="0" tabpos="7">
@@ -160,22 +160,22 @@
 	<File name="..\World Server\quest\Quests.cpp" open="0" top="0" tabpos="13">
 		<Cursor position="48676" topLine="1461" />
 	</File>
-	<File name="..\World Server\startup.cpp" open="1" top="0" tabpos="19">
+	<File name="..\World Server\startup.cpp" open="1" top="0" tabpos="13">
 		<Cursor position="66540" topLine="2004" />
 	</File>
 	<File name="..\World Server\stbhandler.cpp" open="1" top="0" tabpos="3">
 		<Cursor position="5033" topLine="203" />
 	</File>
-	<File name="..\World Server\worldmap.cpp" open="1" top="0" tabpos="20">
+	<File name="..\World Server\worldmap.cpp" open="1" top="0" tabpos="14">
 		<Cursor position="3083" topLine="125" />
 	</File>
 	<File name="..\World Server\worldmap.h" open="0" top="0" tabpos="10">
 		<Cursor position="1123" topLine="75" />
 	</File>
-	<File name="..\World Server\worldpackets.cpp" open="1" top="0" tabpos="7">
-		<Cursor position="149022" topLine="4008" />
+	<File name="..\World Server\worldpackets.cpp" open="0" top="0" tabpos="7">
+		<Cursor position="70544" topLine="2003" />
 	</File>
-	<File name="..\World Server\worldserver.cpp" open="1" top="0" tabpos="8">
-		<Cursor position="34655" topLine="794" />
+	<File name="..\World Server\worldserver.cpp" open="0" top="0" tabpos="8">
+		<Cursor position="33381" topLine="791" />
 	</File>
 </CodeBlocks_layout_file>
