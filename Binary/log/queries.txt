@@ -1192,3 +1192,107 @@ Thu Feb 02 13:34:54 2017 - - IN Qstore:: SELECT account_id, time_remaining, ban_
 Thu Feb 02 13:35:54 2017 - - IN Qstore:: SELECT account_id, time_remaining, ban_type FROM warning_system
 Thu Feb 02 13:36:54 2017 - - IN Qstore:: SELECT account_id, time_remaining, ban_type FROM warning_system
 Thu Feb 02 13:37:54 2017 - - IN Qstore:: SELECT account_id, time_remaining, ban_type FROM warning_system
+Thu Feb 02 13:38:54 2017 - - IN Qstore:: SELECT account_id, time_remaining, ban_type FROM warning_system
+Thu Feb 02 13:38:57 2017 - - IN Qstore:: SELECT id FROM list_npcs WHERE id='1'
+Thu Feb 02 13:38:59 2017 - - IN Qstore:: SELECT id FROM list_npcs WHERE id='1'
+Thu Feb 02 13:39:54 2017 - - IN Qstore:: SELECT account_id, time_remaining, ban_type FROM warning_system
+Thu Feb 02 13:39:58 2017 - - IN QExec:: DELETE FROM channels WHERE id=1 and type=2
+Thu Feb 02 14:38:57 2017 - - IN Qstore:: SELECT id FROM list_npcs WHERE id='1'
+Thu Feb 02 14:38:59 2017 - - IN Qstore:: SELECT id FROM list_npcs WHERE id='1'
+Thu Feb 02 14:41:09 2017 - - IN QExec:: SET SESSION interactive_timeout=2678400
+Thu Feb 02 14:41:10 2017 - - IN Qstore:: SELECT exp_rate, drop_rate, zuly_rate, blue_chance, stat_chance, slot_chance,         refine_chance, rare_refine, kill_on_fail, player_damage, monster_damage, player_acc, monster_acc,         pvp_acc, skill_damage, maxlevel, drop_type, savetime, partygap, maxstat, cfmode, autosave, mapdelay,         visualdelay, worlddelay, fairymode, fairystay, fairywait, fairytestmode, osrosever, testgrid, jrose,         is_pegasus, monmax, massexport,uwnbplayers,uwside,pc_drop_zuly,drop_rev,advertise_active, advertise_time, item_drop_rate FROM list_config
+Thu Feb 02 14:41:10 2017 - - IN Qstore:: SELECT map_name,map_id FROM map_exp WHERE id = 5
+Thu Feb 02 14:41:10 2017 - - IN Qstore:: SELECT accesslevel,active,type,ZulieCost,ZulieLimit FROM lotto_config
+Thu Feb 02 14:41:10 2017 - - IN Qstore:: SELECT id, stat_number FROM list_extra_stats
+Thu Feb 02 14:41:11 2017 - - IN Qstore:: SELECT mapid,wpnum,mapx,mapy,wptype FROM list_waypoints
+Thu Feb 02 14:41:11 2017 - - IN Qstore:: SELECT id,type,min_level,max_level,prob,mob,map,alt,ref,a_x,a_y,a_range FROM item_drops_and
+Thu Feb 02 14:41:11 2017 - - IN Qstore:: SELECT id,itemtype,min,max,prob FROM list_skillbooks
+Thu Feb 02 14:41:11 2017 - - IN Qstore:: SELECT id, srcx, srcy, srcmap, destx, desty, destmap FROM list_telegates ORDER BY id ASC
+Thu Feb 02 14:41:11 2017 - - IN Qstore:: SELECT id,x,y,map,radius,type FROM list_respawnzones
+Thu Feb 02 14:41:21 2017 - - IN Qstore:: SELECT spawnid,mapid,radius,spawn_x,spawn_y,tactic,bmob1,bmob2,bmob3,bmob4,bmob5,bcount1,bcount2,bcount3,bcount4,bcount5,tmob1,tmob2,tcount1,tcount2,spawn_interval FROM spawns
+Thu Feb 02 14:41:21 2017 - - IN Qstore:: SELECT type,map,dir,x,y,dialogid,eventid,tempdialogid,name,extra_param FROM list_npcs ORDER BY id
+Thu Feb 02 14:41:21 2017 - - IN Qstore:: SELECT type,map,dir,x,y,dialogid,eventid,tempdialogid,name,isactive FROM list_npcs_special where isactive='1' 
+Thu Feb 02 14:41:21 2017 - - IN Qstore:: SELECT type,dialogid,eventid,activekeyword FROM list_events WHERE Active='1' 
+Thu Feb 02 14:41:32 2017 - - IN QExec:: UPDATE accounts set online=false
+Thu Feb 02 14:41:32 2017 - - IN QExec:: DELETE FROM channels WHERE id=1 and type=2
+Thu Feb 02 14:41:32 2017 - - IN QExec:: INSERT INTO channels (id,type,name,host,port,lanip,lansubmask,connected,maxconnections,owner) VALUES (1,2,'Test001','5.96.131.5',29200,'localhost','localhost',0,500,1)
+Thu Feb 02 14:41:32 2017 - - IN Qstore:: SELECT host,port,lanip FROM channels WHERE id=1 and type=1
+Thu Feb 02 14:41:32 2017 - - IN Qstore:: SELECT id, ip, startban, bantime FROM ban_list
+Thu Feb 02 14:41:32 2017 - - IN Qstore:: SELECT id, ip, startban, bantime FROM ban_list
+Thu Feb 02 14:41:32 2017 - - IN QExec:: UPDATE channels SET connected=1 where id=1 and type=2
+Thu Feb 02 14:41:46 2017 - - IN Qstore:: SELECT id, ip, startban, bantime FROM ban_list
+Thu Feb 02 14:41:46 2017 - - IN Qstore:: SELECT id,password,accesslevel,online,active FROM accounts WHERE username='purpleyouko'
+Thu Feb 02 14:41:46 2017 - - IN Qstore:: SELECT id,name FROM channels WHERE type=1
+Thu Feb 02 14:41:46 2017 - - IN Qstore:: SELECT id,name,connected,maxconnections FROM channels WHERE owner=1 and type=2
+Thu Feb 02 14:41:47 2017 - - IN QExec:: UPDATE accounts SET lastsvr=1,lastip='127.0.0.1',lasttime=UNIX_TIMESTAMP( NOW() ) WHERE id=1005108
+Thu Feb 02 14:41:47 2017 - - IN Qstore:: SELECT host,port,lanip,lansubmask,connected,maxconnections FROM channels WHERE id=1 and type=1
+Thu Feb 02 14:41:47 2017 - - IN Qstore:: SELECT id, ip, startban, bantime FROM ban_list
+Thu Feb 02 14:41:47 2017 - - IN Qstore:: SELECT username,lastsvr,accesslevel,platinum FROM accounts WHERE id=1005108 AND password='80f2ef8d121d9b6dcb5019a5a375db92'
+Thu Feb 02 14:41:47 2017 - - IN Qstore:: SELECT online FROM accounts WHERE username='purpleyouko'
+Thu Feb 02 14:41:47 2017 - - IN QExec:: UPDATE accounts SET online=1 WHERE username='purpleyouko'
+Thu Feb 02 14:41:47 2017 - - IN QExec:: DELETE FROM characters WHERE deletetime>0 AND deletetime<=587380651
+Thu Feb 02 14:41:47 2017 - - IN Qstore:: SELECT char_name,level,face,hairStyle,sex,classid,id,deletetime FROM characters WHERE account_name='purpleyouko'
+Thu Feb 02 14:41:47 2017 - - IN Qstore:: SELECT itemnum,itemtype,refine,durability,lifespan,slotnum FROM items WHERE owner=24894 AND slotnum<10
+Thu Feb 02 14:41:47 2017 - - IN Qstore:: SELECT itemnum,itemtype,refine,durability,lifespan,slotnum FROM items WHERE owner=24895 AND slotnum<10
+Thu Feb 02 14:41:47 2017 - - IN Qstore:: SELECT itemnum,itemtype,refine,durability,lifespan,slotnum FROM items WHERE owner=24896 AND slotnum<10
+Thu Feb 02 14:41:48 2017 - - IN Qstore:: SELECT itemnum,itemtype,refine,durability,lifespan,slotnum FROM items WHERE owner=24897 AND slotnum<10
+Thu Feb 02 14:41:48 2017 - - IN Qstore:: SELECT itemnum,itemtype,refine,durability,lifespan,slotnum FROM items WHERE owner=24898 AND slotnum<10
+Thu Feb 02 14:42:02 2017 - - IN QExec:: UPDATE accounts SET lastchar='PurpleYouko' WHERE id=1005108
+Thu Feb 02 14:42:02 2017 - - IN Qstore:: SELECT host,port,lanip,lansubmask FROM channels WHERE id=1 and owner=1 and type=2
+Thu Feb 02 14:42:02 2017 - - IN Qstore:: SELECT clanid,clan_rank,id,level,classid,rewardpoints FROM characters WHERE char_name='PurpleYouko'
+Thu Feb 02 14:42:02 2017 - - IN Qstore:: SELECT id, ip, startban, bantime FROM ban_list
+Thu Feb 02 14:42:02 2017 - - IN Qstore:: SELECT idfriend,namefriend FROM list_friend WHERE id=24894
+Thu Feb 02 14:42:02 2017 - - IN QExec:: UPDATE channels SET connected=2 where id=1 and type=2
+Thu Feb 02 14:42:02 2017 - - IN Qstore:: SELECT username,lastchar,accesslevel,zulystorage,ExpansionTime FROM accounts WHERE id=1005108 AND password='80f2ef8d121d9b6dcb5019a5a375db92'
+Thu Feb 02 14:42:02 2017 - - IN Qstore:: SELECT level,face,hairStyle,sex,classid,zuly,str,dex,_int, con,cha,sen,curHp,curMp,id,statp,skillp,exp,stamina,quickbar,basic_skills, class_skills,class_skills_level,respawnid,clanid,clan_rank,townid,rewardpoints,unionid,unionfame,union01,union02,union03,union04,union05,bonusxp,timerxp,shoptype,timershop,isGM,unique_skills,mileage_skills,driving_skills,unique_skills_level,mileage_skills_level,bonusddrop,timerddrop,bonusstatdrop,timerstatdrop,bonusgraydrop,timergraydrop FROM characters WHERE char_name='PurpleYouko'
+Thu Feb 02 14:42:02 2017 - - IN Qstore:: SELECT itemnum,itemtype,refine,durability,lifespan,slotnum,count,stats,socketed,appraised,gem,sp_value FROM items WHERE owner=24894
+Thu Feb 02 14:42:02 2017 - - IN Qstore:: SELECT itemnum,itemtype,refine,durability,lifespan,slotnum,count,stats,socketed,appraised,gem FROM storage WHERE owner=1005108
+Thu Feb 02 14:42:02 2017 - - IN Qstore:: SELECT itemnum,itemtype,refine,durability,lifespan,slotnum,count,stats,socketed,appraised,gem FROM mileage WHERE owner=1005108
+Thu Feb 02 14:42:02 2017 - - IN Qstore:: SELECT quests from list_quest_new where owner=24894
+Thu Feb 02 14:42:02 2017 - - IN QExec:: UPDATE accounts SET online=true where id=1005108
+Thu Feb 02 14:42:03 2017 - - IN Qstore:: SELECT slot,itemhead,itemdata FROM wishlist WHERE itemowner=24894 ORDER BY slot DESC
+Thu Feb 02 14:42:10 2017 - - IN Qstore:: SELECT account_id, time_remaining, ban_type FROM warning_system
+Thu Feb 02 14:42:19 2017 - - IN Qstore:: SELECT id FROM mail_list WHERE sendtocharid=24894
+Thu Feb 02 14:42:19 2017 - - IN QExec:: DELETE FROM items WHERE owner=24894 AND slotnum=140
+Thu Feb 02 14:42:19 2017 - - IN QExec:: DELETE FROM items WHERE owner=24894 AND slotnum=0
+Thu Feb 02 14:42:19 2017 - - IN QExec:: DELETE FROM items WHERE owner=24894 AND slotnum=141
+Thu Feb 02 14:42:19 2017 - - IN QExec:: DELETE FROM items WHERE owner=24894 AND slotnum=0
+Thu Feb 02 14:42:19 2017 - - IN QExec:: DELETE FROM items WHERE owner=24894 AND slotnum=142
+Thu Feb 02 14:42:19 2017 - - IN QExec:: DELETE FROM items WHERE owner=24894 AND slotnum=0
+Thu Feb 02 14:42:19 2017 - - IN QExec:: DELETE FROM items WHERE owner=24894 AND slotnum=143
+Thu Feb 02 14:42:19 2017 - - IN QExec:: DELETE FROM items WHERE owner=24894 AND slotnum=0
+Thu Feb 02 14:42:19 2017 - - IN QExec:: DELETE FROM items WHERE owner=24894 AND slotnum=144
+Thu Feb 02 14:42:19 2017 - - IN QExec:: DELETE FROM items WHERE owner=24894 AND slotnum=0
+Thu Feb 02 14:42:19 2017 - - IN QExec:: DELETE FROM items WHERE owner=24894 AND slotnum=145
+Thu Feb 02 14:42:19 2017 - - IN QExec:: DELETE FROM items WHERE owner=24894 AND slotnum=0
+Thu Feb 02 14:42:19 2017 - - IN QExec:: DELETE FROM items WHERE owner=24894 AND slotnum=146
+Thu Feb 02 14:42:19 2017 - - IN QExec:: DELETE FROM items WHERE owner=24894 AND slotnum=0
+Thu Feb 02 14:42:19 2017 - - IN QExec:: DELETE FROM items WHERE owner=24894 AND slotnum=147
+Thu Feb 02 14:42:19 2017 - - IN QExec:: DELETE FROM items WHERE owner=24894 AND slotnum=0
+Thu Feb 02 14:43:10 2017 - - IN Qstore:: SELECT account_id, time_remaining, ban_type FROM warning_system
+Thu Feb 02 14:43:32 2017 - - IN QExec:: DELETE FROM items WHERE owner=24894 AND slotnum=140
+Thu Feb 02 14:43:32 2017 - - IN QExec:: DELETE FROM items WHERE owner=24894 AND slotnum=0
+Thu Feb 02 14:43:32 2017 - - IN QExec:: DELETE FROM items WHERE owner=24894 AND slotnum=141
+Thu Feb 02 14:43:32 2017 - - IN QExec:: DELETE FROM items WHERE owner=24894 AND slotnum=0
+Thu Feb 02 14:43:32 2017 - - IN QExec:: DELETE FROM items WHERE owner=24894 AND slotnum=142
+Thu Feb 02 14:43:32 2017 - - IN QExec:: DELETE FROM items WHERE owner=24894 AND slotnum=0
+Thu Feb 02 14:43:32 2017 - - IN QExec:: DELETE FROM items WHERE owner=24894 AND slotnum=143
+Thu Feb 02 14:43:32 2017 - - IN QExec:: DELETE FROM items WHERE owner=24894 AND slotnum=0
+Thu Feb 02 14:43:32 2017 - - IN QExec:: DELETE FROM items WHERE owner=24894 AND slotnum=144
+Thu Feb 02 14:43:32 2017 - - IN QExec:: DELETE FROM items WHERE owner=24894 AND slotnum=0
+Thu Feb 02 14:43:32 2017 - - IN QExec:: DELETE FROM items WHERE owner=24894 AND slotnum=145
+Thu Feb 02 14:43:32 2017 - - IN QExec:: DELETE FROM items WHERE owner=24894 AND slotnum=0
+Thu Feb 02 14:43:32 2017 - - IN QExec:: DELETE FROM items WHERE owner=24894 AND slotnum=146
+Thu Feb 02 14:43:32 2017 - - IN QExec:: DELETE FROM items WHERE owner=24894 AND slotnum=0
+Thu Feb 02 14:43:32 2017 - - IN QExec:: DELETE FROM items WHERE owner=24894 AND slotnum=147
+Thu Feb 02 14:43:32 2017 - - IN QExec:: DELETE FROM items WHERE owner=24894 AND slotnum=0
+Thu Feb 02 14:44:10 2017 - - IN Qstore:: SELECT account_id, time_remaining, ban_type FROM warning_system
+Thu Feb 02 14:45:10 2017 - - IN Qstore:: SELECT account_id, time_remaining, ban_type FROM warning_system
+Thu Feb 02 14:46:10 2017 - - IN Qstore:: SELECT account_id, time_remaining, ban_type FROM warning_system
+Thu Feb 02 14:47:10 2017 - - IN Qstore:: SELECT account_id, time_remaining, ban_type FROM warning_system
+Thu Feb 02 14:48:10 2017 - - IN Qstore:: SELECT account_id, time_remaining, ban_type FROM warning_system
+Thu Feb 02 14:49:10 2017 - - IN Qstore:: SELECT account_id, time_remaining, ban_type FROM warning_system
+Thu Feb 02 14:50:11 2017 - - IN Qstore:: SELECT account_id, time_remaining, ban_type FROM warning_system
+Thu Feb 02 14:51:11 2017 - - IN Qstore:: SELECT account_id, time_remaining, ban_type FROM warning_system
+Thu Feb 02 14:52:11 2017 - - IN Qstore:: SELECT account_id, time_remaining, ban_type FROM warning_system
+Thu Feb 02 14:53:11 2017 - - IN Qstore:: SELECT account_id, time_remaining, ban_type FROM warning_system

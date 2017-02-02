@@ -1407,7 +1407,7 @@ else if(strcmp(command, "gmlist")==0) /* GM List {By CrAshInSiDe} */
         }
 */
         //Orlo Added By Thriel
-        else if (loc == 15) // Orlo
+        else if (loc == 15) // Orlo. Dessert city of Muris
         {
              if (thisclient->Stats->Level<160)
              {
@@ -1416,7 +1416,7 @@ else if(strcmp(command, "gmlist")==0) /* GM List {By CrAshInSiDe} */
              }
              else
              {
-                map = 74;
+                map = 71;
                 x = 5168;
                 y = 5227;
              }
