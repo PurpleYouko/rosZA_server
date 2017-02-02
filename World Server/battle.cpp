@@ -444,10 +444,156 @@ void CCharacter::DoAttack( )
 }
 
 // do normal attack
+// KT version
+// commented for now
+/*
 void CCharacter::NormalAttack( CCharacter* Enemy )
 {
-//LMA: Sometimes it's fired several times, no need to kill several times ;)
-    bool is_already_dead=Enemy->IsDead();
+    Enemy->OnBeAttacked( this );
+    Position->destiny  = Position->current;
+    //Log(MSG_DEBUG,"(NormalAttack) Destiny set to current position X: %f Y: %f.",Position->current.x,Position->current.y);
+
+
+    // Even newer formula based on Jayce's idea
+    //dodge. gives a percentage chance
+    unsigned int hitpower = 0;
+    bool critical = false;
+    unsigned int totalchance = Stats->Accury + Enemy->Stats->Dodge;
+    double acdm = Stats->Accury * 100 / totalchance;
+    unsigned int hitchance = (unsigned int)floor(acdm);
+    if(GServer->RandNumber( 0, 100 ) > hitchance)
+    {
+        hitpower = 0; // dodged
+        //Log(MSG_DEBUG,"accuracy %i dodge %i",Stats->Accury,Enemy->Stats->Dodge);
+        //Log(MSG_DEBUG,"Dodged total %i mod %f hit chance %i",totalchance,acdm,hitchance);
+    }
+    else
+    {
+        //level adjustment. Not yet implemented
+        unsigned int leveltotal = Stats->Level + Enemy->Stats->Level;
+        double levelmod = Stats->Level * 200 / leveltotal;
+
+        //calculate damage
+        if(Stats->magicattack == 1) //magic attacks such as wands and some monsters
+        {
+            unsigned int totalpower = Stats->Attack_Power + Enemy->Stats->Magic_Defense;
+            double hitmod = Stats->Attack_Power * 100 / totalpower + Stats->Level; //percentage of hitpower to use * 100
+            hitpower = (unsigned int)floor((double)(hitmod * Stats->Attack_Power / 100));
+        }
+        else
+        {
+            unsigned int totalpower = Stats->Attack_Power + Enemy->Stats->Defense;
+            double hitmod = Stats->Attack_Power * 100 / totalpower + Stats->Level; //percentage of hitpower to use * 100
+            hitpower = (unsigned int)floor((double)(Stats->Attack_Power * hitmod / 100));
+            //Log(MSG_DEBUG,"Normal Attack: AP %i DEF %i",Stats->Attack_Power,Enemy->Stats->Defense);
+            //Log(MSG_DEBUG,"Normal Attack: hit total %i hitmod %f hit power %i",totalpower,hitmod,hitpower);
+        }
+        //add some randomness. + or - 5% of hitpower
+        int min = (int)floor((double)(hitpower * 0.85));
+        int max = (int)floor((double)(hitpower * 1.15));
+        int dif = max - min;
+        int mod = GServer->RandNumber( 0, dif );
+        hitpower = min + mod;
+        //Log(MSG_DEBUG,"min %i max %i dif %i mod %i modified hit power %i", min, max, dif, mod, hitpower);
+        if(hitpower <= 5)
+        {
+            hitpower = 5;
+        }
+        else
+        {
+            if(GServer->RandNumber(0,300)<Stats->Critical)
+            {
+                hitpower = (long int)floor(hitpower * 1.5);
+                critical = true;
+                //Log(MSG_DEBUG,"CRITICAL hit power %i", hitpower);
+            }
+        }
+        if (hitpower > 0x7ff)//2047 packet size limit.
+           hitpower = 0x7ff;
+        //Log(MSG_DEBUG,"Successful hit hit chance %i damage %i",hitchance, hitpower);
+    }
+
+
+    //end jayce formula
+    Battle->atktarget = Battle->target;
+    //if(IsMonster())
+    //{
+        //Log(MSG_INFO,"Monster hits player for %i damage. Attack target = %i",hitpower,Battle->atktarget);
+    //}
+    //Log( MSG_INFO, "hitpower %i. Attack %f ", hitpower,attack );
+    if(!Enemy->IsSummon( ) && Enemy->IsMonster( ))
+    {
+        Enemy->AddDamage( this, hitpower );
+        Enemy->damagecounter += hitpower;// is for AI
+    }
+    Enemy->Stats->HP -= hitpower;
+    //if(IsPlayer())
+    //    Log(MSG_DEBUG,"Player attack did damage %i",hitpower);
+    //if(IsMonster())
+    //    Log(MSG_DEBUG,"Monster attack did damage %i",hitpower);
+
+
+
+    BEGINPACKET( pak, 0x799 );
+    ADDWORD    ( pak, clientid );
+    ADDWORD    ( pak, Battle->atktarget );
+
+    if(Enemy->IsDead())
+    {
+        CDrop* thisdrop = NULL;
+        ADDWORD ( pak, (hitpower |   (    critical?0xb000:0x8000   )    ));
+        if(!Enemy->IsSummon( ) && !Enemy->IsPlayer( ))
+        {
+            int thisdroprate = Stats->itemdroprate + GServer->Config.DROP_RATE;
+            //Log(MSG_DEBUG,"Monster killed. calling drops function %i times",thisdroprate);
+            for(int j=0;j<thisdroprate;j++)
+            {
+                thisdrop = Enemy->GetDrop( );
+                if(thisdrop != NULL)
+                {
+                    CMap* map = GServer->MapList.Index[thisdrop->posMap];
+                    map->AddDrop( thisdrop );
+                }
+            }
+        }
+        GServer->SendToVisible( &pak, Enemy );
+        ClearBattle(Battle);
+        //ClearBattle(Enemy->Battle);
+        if(Enemy->IsMonster())
+        {
+            CMonster* monster = reinterpret_cast<CMonster*>(Enemy);
+            if(monster == NULL)
+            {
+                //Log(MSG_DEBUG,"Monster killed. Failed to create monster object");
+                return;
+            }
+            else
+            {
+                //Log(MSG_DEBUG,"Monster killed. Setting death delay timer");
+                monster->DeathDelayTimer = clock();
+            }
+        }
+        OnEnemyDie( Enemy );
+        ClearBattle(Battle);
+        GServer->SendToVisible( &pak, Enemy );
+    }
+    else
+    {
+        ADDWORD   ( pak, (hitpower|(hitpower>0?(critical?0x4000:0):0)));
+        //ADDDWORD   ( pak, (hitpower>0?(critical?12:0):0) );
+        GServer->SendToVisible( &pak, Enemy );
+    }
+    ReduceABC( );
+    Battle->lastAtkTime = clock( );
+    //Battle->lastAtkTime = Battle->NextAtkTime;
+}
+*/
+
+// do normal attack
+void CCharacter::NormalAttack( CCharacter* Enemy )
+{
+    //LMA: Sometimes it's fired several times, no need to kill several times ;)
+    bool is_already_dead = Enemy->IsDead();
 
     Position->destiny = Position->current;
 
@@ -558,7 +704,8 @@ void CCharacter::NormalAttack( CCharacter* Enemy )
     }
     // actually the target was hit, if it was sleeping, set duration of
     // sleep to 0. map process will remove sleep then at next player-update
-    if (Enemy->Status->Sleep != 0xff) {
+    if (Enemy->Status->Sleep != 0xff)
+    {
         Enemy->MagicStatus[Enemy->Status->Sleep].Duration = 0;
     }
 
@@ -599,21 +746,27 @@ void CCharacter::NormalAttack( CCharacter* Enemy )
             else
                 Log(MSG_INFO,"Enemy died. Enemy->target = %i",Enemy->Battle->target);  //print out the eney's target
         }
+        if(GServer->ServerDebug)
+            Log(MSG_INFO,"running is_already_dead check 1");
 
         if (!is_already_dead&&((GServer->MapList.Index[Position->Map]->QSDkilling>0&&IsPlayer()&&Enemy->IsPlayer())||(GServer->MapList.Index[Position->Map]->QSDDeath&&Enemy->IsPlayer())))
         {
-            //Log(MSG_INFO,"UWKILL begin normal atk");
+            if(GServer->ServerDebug)
+                Log(MSG_INFO,"UWKILL begin normal atk");
             UWKill(Enemy);
         }
 
 
 
         //This stuff from LMA doesn't make a lot of sense
-
+        if(GServer->ServerDebug)
+            Log(MSG_INFO,"running is_already_dead check 2 for quests");
         //LMA: test for quest hack (stackable).
         #ifdef QHACK
-        if(!is_already_dead&&Enemy->die_quest!=0&&Enemy->IsMonster()&&(IsPlayer()||IsSummon()))
+        if(!is_already_dead && Enemy->die_quest != 0 && Enemy->IsMonster() && (IsPlayer() || IsSummon()))
         {
+            if(GServer->ServerDebug)
+                Log(MSG_INFO,"running questkill");
             QuestKill(Enemy->die_quest);
         }
         #endif
@@ -621,6 +774,8 @@ void CCharacter::NormalAttack( CCharacter* Enemy )
 
         //LMA: TESTDEATH :: We try to force the DEATH
         //ADDDWORD   ( pak, Enemy->Stats->MaxHP );
+        if(GServer->ServerDebug)
+            Log(MSG_INFO,"adding hitpower to packet");
         ADDDWORD   ( pak, hitpower );
 
         //Logs.
@@ -634,12 +789,15 @@ void CCharacter::NormalAttack( CCharacter* Enemy )
         {
             Log(MSG_INFO,"NA CID %i killed %i (NORMAL_ATTACK).",clientid,Enemy->clientid);
         }*/
-
+        if(GServer->ServerDebug)
+            Log(MSG_INFO,"setting up drop. Why do this if the dead one might be a player?");
         CDrop* thisdrop = NULL;
         //Log(MSG_WARNING,"Dead, critical %i",critical);
 
         //LMA: Seems that 24 is for critical and skill? We disable critical final hit for now.
         //ADDDWORD   ( pak, critical?28:16 );
+        if(GServer->ServerDebug)
+            Log(MSG_INFO,"adding 16 (crit) to packet");
         ADDDWORD   ( pak, 16 );
         if(!Enemy->IsSummon( ) && !Enemy->IsPlayer( ))
         {
@@ -677,17 +835,25 @@ void CCharacter::NormalAttack( CCharacter* Enemy )
         }
 
         //GServer->SendToVisible( &pak, Enemy, thisdrop );
+        if(GServer->ServerDebug)
+            Log(MSG_INFO,"sending packet to visible");
         GServer->SendToVisible( &pak, Enemy );
 
         //LMA: test
         //OnEnemyDie( Enemy );
         //ClearBattle(Battle);  //this line might stop the AIP from finding a target after the monster dies.
-        if(!is_already_dead)
+        if(GServer->ServerDebug)
+            Log(MSG_INFO,"clearing battle");
+        if(!is_already_dead && !Enemy->IsPlayer( ))
         {
+            if(GServer->ServerDebug)
+                Log(MSG_INFO,"I am already dead apparently");
             CMonster* monster = GServer->GetMonsterByID(Enemy->clientid, Enemy->Position->Map);
             if(monster->TD)
+            {
                 GServer->TDMonCount --;
-            Log(MSG_WARNING,"TD monster died. Current TD Monster Count is %i",GServer->TDMonCount);
+                Log(MSG_WARNING,"TD monster died. Current TD Monster Count is %i",GServer->TDMonCount);
+            }
             TakeExp(Enemy);
         }
         //end of test.
@@ -696,10 +862,16 @@ void CCharacter::NormalAttack( CCharacter* Enemy )
 
         //LMA: test packet...
         //0x820 - 01 00 00 00
+        if(GServer->ServerDebug)
+            Log(MSG_INFO,"checking if enemy is a player");
         if(Enemy->IsPlayer())
         {
+            if(GServer->ServerDebug)
+                Log(MSG_INFO,"yup it's a player");
             CPlayer* plkilled=(CPlayer*) Enemy;
-            if(plkilled!=NULL)
+            if(GServer->ServerDebug)
+                Log(MSG_INFO,"Uplayer died. sending an 0x820 packet");
+            if(plkilled != NULL)
             {
                 BEGINPACKET( pak, 0x820 );
                 ADDWORD    ( pak, 1 );
@@ -715,16 +887,21 @@ void CCharacter::NormalAttack( CCharacter* Enemy )
 				plkilled->RefreshBuff();
             }
 
+
         }
         else if (Enemy->IsMonster())
         {
+            if(GServer->ServerDebug)
+                Log(MSG_INFO,"no it's a monster");
             //LMA let's send a suicide packet so monster should be killed twice (not anymore).
         }
-
+        if(GServer->ServerDebug)
+            Log(MSG_INFO,"end of check for is dead");
     }
     else
     {
         //LMA: TESTDEATH
+
         ADDDWORD   ( pak, hitpower );
 
         //Logs.
@@ -750,6 +927,8 @@ void CCharacter::NormalAttack( CCharacter* Enemy )
     //LMA: We take fuel.
     if(IsPlayer()&&Status->Stance==DRIVING)
     {
+        if(GServer->ServerDebug)
+            Log(MSG_INFO,"taking fuel");
         CPlayer* plkiller=(CPlayer*) this;
 
         if(plkiller->items[136].itemnum==0||plkiller->items[139].itemnum==0)

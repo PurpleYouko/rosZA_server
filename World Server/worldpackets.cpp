@@ -2026,7 +2026,7 @@ bool CWorldServer::pakUserDied ( CPlayer* thisclient, CPacket* P )
     CMap* map = MapList.Index[thisclient->Position->Map];
     CRespawnPoint* thisrespawn = NULL;
     CRespawnPoint dungeonSpawn;
-
+    Log(MSG_INFO,"Player %s died, he has %I64i Hp",thisclient->CharInfo->charname,thisclient->Stats->HP);
     if(respawn==1)
     {
         thisrespawn = map->GetNearRespawn( thisclient );
