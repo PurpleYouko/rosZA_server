@@ -843,7 +843,8 @@ bool CWorldServer::OnReceivePacket( CClientSocket* thisclient, CPacket *P )
     	case 0x07c0: return pakTradeAction      ( (CPlayer*)thisclient->player, P );
     	case 0x07c1: return pakTradeAdd         ( (CPlayer*)thisclient->player, P );
     	case 0x07ad: return pakStorage          ( (CPlayer*)thisclient->player, P );
-    	case 0x07ae: return pakChangeStorage    ( (CPlayer*)thisclient->player, P );
+    	case 0x07ae: return pakChangeStorage    ( (CPlayer*)thisclient->player, P );    //old format. Now changed to 0x07c8 for some reason
+    	case 0x07c8: return pakChangeStorage    ( (CPlayer*)thisclient->player, P );
     	case 0x07ba: return pakidentify         ( (CPlayer*)thisclient->player, P );
     	case 0x07bc: return pakModifiedItem     ( (CPlayer*)thisclient->player, P );
     	case 0x07bf: return pakAddWishList      ( (CPlayer*)thisclient->player, P );

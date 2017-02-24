@@ -5732,7 +5732,7 @@ bool CWorldServer::pakChangeStorage( CPlayer* thisclient, CPacket* P)
                 thisclient->nstorageitems++;
             }
 
-            BEGINPACKET( pak, 0x7ae );
+            /*BEGINPACKET( pak, 0x7c8 );
             ADDWORD    ( pak, itemslot );
             ADDWORD    ( pak, newslot );
             if (Config.jrose==1)
@@ -5747,8 +5747,31 @@ bool CWorldServer::pakChangeStorage( CPlayer* thisclient, CPacket* P)
             ADDWORD ( pak, 0x0000 );
     		ADDQWORD   ( pak, thisclient->CharInfo->Zulies );
             thisclient->client->SendPacket( &pak );
+            */
+            // The above code doesn't work any more with the packet change from o7ae to 07c8 so I'm trying to resend the initial 07ad packet to update the storage window.
 
-            thisclient->storageitems[newslot] = newitem;
+
+            thisclient->storageitems[newslot] = newitem; // need to update storage first
+
+            BEGINPACKET( pak, 0x7ad );
+            ADDBYTE    ( pak, 0x00 );
+            ADDBYTE    ( pak, thisclient->nstorageitems ); //numero de items
+            for(int i=0;i<160;i++)
+            {
+           		if( thisclient->storageitems[i].itemtype !=0 )
+           		{
+                    ADDBYTE    ( pak, i );
+                  	ADDDWORD   ( pak, BuildItemHead( thisclient->storageitems[i] ) );
+               		ADDDWORD   ( pak, BuildItemData( thisclient->storageitems[i] ) );
+                    ADDDWORD( pak, 0x00000000 );
+                    ADDWORD ( pak, 0x0000 );
+                }
+            }
+            ADDQWORD( pak, thisclient->CharInfo->Storage_Zulies );
+            thisclient->client->SendPacket( &pak );
+
+            //update inventory
+            thisclient->UpdateInventory(itemslot);
 
             //LMA: need to save the storage item...
             SaveSlotStorage(thisclient,newslot);
@@ -5822,7 +5845,7 @@ bool CWorldServer::pakChangeStorage( CPlayer* thisclient, CPacket* P)
                 thisclient->items[newslot2] = newitem;
                 thisclient->UpdateInventory( newslot2 );
             }
-            BEGINPACKET( pak, 0x7ae );
+            /*BEGINPACKET( pak, 0x7c8 );
             ADDWORD    ( pak, newslot );
             ADDWORD    ( pak, storageslot );
             if (Config.jrose==1)
@@ -5841,6 +5864,8 @@ bool CWorldServer::pakChangeStorage( CPlayer* thisclient, CPacket* P)
             ADDBYTE    ( pak, 0x00 );
 
             thisclient->client->SendPacket( &pak );
+            */
+            //The above code doesn't work since the change from 0x07ae to 0x07c8 so we have to force teh storage and inventory windows to update
 
             if(thisclient->storageitems[storageslot].itemnum==0)
                 thisclient->nstorageitems--;
@@ -5849,6 +5874,25 @@ bool CWorldServer::pakChangeStorage( CPlayer* thisclient, CPacket* P)
             SaveSlotStorage(thisclient,storageslot);
             //We save the inventory slot as well
             thisclient->SaveSlot41(newslot);
+            BEGINPACKET( pak, 0x7ad );
+            ADDBYTE    ( pak, 0x00 );
+            ADDBYTE    ( pak, thisclient->nstorageitems ); //numero de items
+            for(int i=0;i<160;i++)
+            {
+           		if( thisclient->storageitems[i].itemtype !=0 )
+           		{
+                    ADDBYTE    ( pak, i );
+                  	ADDDWORD   ( pak, BuildItemHead( thisclient->storageitems[i] ) );
+               		ADDDWORD   ( pak, BuildItemData( thisclient->storageitems[i] ) );
+                    ADDDWORD( pak, 0x00000000 );
+                    ADDWORD ( pak, 0x0000 );
+                }
+            }
+            ADDQWORD( pak, thisclient->CharInfo->Storage_Zulies );
+            thisclient->client->SendPacket( &pak );
+
+            //update inventory since the 0x7ad packet doesn't do this for us
+            thisclient->UpdateInventory(newslot);
         }
         break;
         default:

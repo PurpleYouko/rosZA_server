@@ -1204,7 +1204,7 @@ AIACT(025)
 
     //LMA: EventID changed?
     //Mainprocess will take care of it since we don't have client ID here.
-    if(data->btVarIDX==0)
+    if(data->btVarIDX == 0)
     {
         LogDebug("AIACT(025) eventID has changed from %i to %i",monster->thisnpc->eventid,tempval);
         monster->thisnpc->eventid=tempval;

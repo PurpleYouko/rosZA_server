@@ -22,11 +22,11 @@
 	<File name="..\Common\sockets.h" open="0" top="0" tabpos="12">
 		<Cursor position="6710" topLine="172" />
 	</File>
-	<File name="..\World Server\Buff.cpp" open="0" top="0" tabpos="12">
-		<Cursor position="22614" topLine="411" />
+	<File name="..\World Server\Buff.cpp" open="1" top="0" tabpos="18">
+		<Cursor position="50481" topLine="991" />
 	</File>
 	<File name="..\World Server\MainProcess.cpp" open="1" top="0" tabpos="5">
-		<Cursor position="25416" topLine="483" />
+		<Cursor position="40883" topLine="774" />
 	</File>
 	<File name="..\World Server\Monster.cpp" open="0" top="0" tabpos="12">
 		<Cursor position="5551" topLine="173" />
@@ -58,8 +58,8 @@
 	<File name="..\World Server\Worldprocess.cpp" open="1" top="0" tabpos="6">
 		<Cursor position="1264" topLine="10" />
 	</File>
-	<File name="..\World Server\aip\AiActions.cpp" open="0" top="0" tabpos="7">
-		<Cursor position="25259" topLine="1583" />
+	<File name="..\World Server\aip\AiActions.cpp" open="1" top="0" tabpos="20">
+		<Cursor position="42033" topLine="1183" />
 	</File>
 	<File name="..\World Server\aip\AiActions.h" open="0" top="0" tabpos="8">
 		<Cursor position="1977" topLine="13" />
@@ -76,8 +76,8 @@
 	<File name="..\World Server\aip\Aip.h" open="0" top="0" tabpos="5">
 		<Cursor position="1204" topLine="9" />
 	</File>
-	<File name="..\World Server\battle.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="32168" topLine="821" />
+	<File name="..\World Server\battle.cpp" open="1" top="1" tabpos="1">
+		<Cursor position="32166" topLine="821" />
 	</File>
 	<File name="..\World Server\character.cpp" open="0" top="0" tabpos="8">
 		<Cursor position="4489" topLine="219" />
@@ -109,7 +109,7 @@
 	<File name="..\World Server\extrafunctions.cpp" open="0" top="0" tabpos="19">
 		<Cursor position="94090" topLine="932" />
 	</File>
-	<File name="..\World Server\gmcmds.cpp" open="1" top="1" tabpos="4">
+	<File name="..\World Server\gmcmds.cpp" open="1" top="0" tabpos="4">
 		<Cursor position="54359" topLine="1397" />
 	</File>
 	<File name="..\World Server\main.cpp" open="0" top="0" tabpos="3">
@@ -127,8 +127,8 @@
 	<File name="..\World Server\player.h" open="0" top="0" tabpos="25">
 		<Cursor position="10017" topLine="276" />
 	</File>
-	<File name="..\World Server\playerdata.cpp" open="0" top="0" tabpos="12">
-		<Cursor position="1071" topLine="16" />
+	<File name="..\World Server\playerdata.cpp" open="1" top="0" tabpos="17">
+		<Cursor position="8342" topLine="351" />
 	</File>
 	<File name="..\World Server\playerfunctions.cpp" open="1" top="0" tabpos="7">
 		<Cursor position="75466" topLine="2057" />
@@ -157,8 +157,8 @@
 	<File name="..\World Server\quest\QuestTrigger.h" open="0" top="0" tabpos="11">
 		<Cursor position="1728" topLine="53" />
 	</File>
-	<File name="..\World Server\quest\Quests.cpp" open="0" top="0" tabpos="13">
-		<Cursor position="48676" topLine="1461" />
+	<File name="..\World Server\quest\Quests.cpp" open="1" top="0" tabpos="19">
+		<Cursor position="8691" topLine="172" />
 	</File>
 	<File name="..\World Server\startup.cpp" open="1" top="0" tabpos="13">
 		<Cursor position="66540" topLine="2004" />
