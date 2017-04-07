@@ -931,10 +931,10 @@
 1483732387 source:f:\roseza svn\svn\trunk\world server\worldpackets.cpp
 	"worldserver.h"
 
-1317741746 source:f:\roseza git\trunk\common\socketbase.cpp
+1317745346 source:f:\roseza git\trunk\common\socketbase.cpp
 	"sockets.h"
 
-1317836352 f:\roseza git\trunk\common\sockets.h
+1317839952 f:\roseza git\trunk\common\sockets.h
 	<windows.h>
 	<winsock2.h>
 	<unistd.h>
@@ -964,33 +964,33 @@
 	"config.h"
 	"database/database.h"
 
-1483727596 f:\roseza git\trunk\common\log.h
+1483731196 f:\roseza git\trunk\common\log.h
 
-1317741746 f:\roseza git\trunk\common\rosecrypt.hpp
+1317745346 f:\roseza git\trunk\common\rosecrypt.hpp
 	<windows.h>
 
-1317741746 f:\roseza git\trunk\common\config.h
+1317745346 f:\roseza git\trunk\common\config.h
 
-1317741746 f:\roseza git\trunk\common\database\database.h
+1317745346 f:\roseza git\trunk\common\database\database.h
 	"../sockets.h"
 
-1333550202 source:f:\roseza git\trunk\common\socketclient.cpp
+1333553802 source:f:\roseza git\trunk\common\socketclient.cpp
 	"sockets.h"
 
-1317741746 source:f:\roseza git\trunk\common\socketserver.cpp
+1317745346 source:f:\roseza git\trunk\common\socketserver.cpp
 	"sockets.h"
 
-1317741746 source:f:\roseza git\trunk\common\config.cpp
+1317745346 source:f:\roseza git\trunk\common\config.cpp
 	<cstdio>
 	<cstring>
 	<cstdlib>
 	<ctype.h>
 
-1317741746 source:f:\roseza git\trunk\common\database\database.cpp
+1317745346 source:f:\roseza git\trunk\common\database\database.cpp
 	"database.h"
 	"../log.h"
 
-1483727991 source:f:\roseza git\trunk\common\log.cpp
+1483731591 source:f:\roseza git\trunk\common\log.cpp
 	<conio.h>
 	<windows.h>
 	<cstdio>
@@ -999,13 +999,13 @@
 	<time.h>
 	"log.h"
 
-1317741746 source:f:\roseza git\trunk\common\rosecrypt.cpp
+1317745346 source:f:\roseza git\trunk\common\rosecrypt.cpp
 	"rosecrypt.hpp"
 
-1328109294 source:f:\roseza git\trunk\world server\buff.cpp
+1328112894 source:f:\roseza git\trunk\world server\buff.cpp
 	"worldserver.h"
 
-1483732770 f:\roseza git\trunk\world server\worldserver.h
+1483736370 f:\roseza git\trunk\world server\worldserver.h
 	"datatypes.h"
 	"../common/sockets.h"
 	"worldmonster.h"
@@ -1024,222 +1024,222 @@
 	"ltbhandler.h"
 	"aip/Aip.h"
 
-1330543249 f:\roseza git\trunk\world server\datatypes.h
+1330546849 f:\roseza git\trunk\world server\datatypes.h
 	"datatypes_compat.h"
 	"../common/sockets.h"
 
-1317741749 f:\roseza git\trunk\world server\datatypes_compat.h
+1317745349 f:\roseza git\trunk\world server\datatypes_compat.h
 
-1328293949 f:\roseza git\trunk\world server\worldmonster.h
+1328297549 f:\roseza git\trunk\world server\worldmonster.h
 	"character.h"
 	"player.h"
 	"worldserver.h"
 
-1323451982 f:\roseza git\trunk\world server\character.h
+1323455582 f:\roseza git\trunk\world server\character.h
 	"chartype.h"
 
-1326895361 f:\roseza git\trunk\world server\chartype.h
+1491584980 f:\roseza git\trunk\world server\chartype.h
 	"datatypes.h"
 
-1328290348 f:\roseza git\trunk\world server\player.h
+1328293948 f:\roseza git\trunk\world server\player.h
 	"character.h"
 
-1317741751 f:\roseza git\trunk\world server\worldmap.h
+1317745351 f:\roseza git\trunk\world server\worldmap.h
 	"worldserver.h"
 	"player.h"
 	"character.h"
 	"worldmonster.h"
 	"datatypes.h"
 
-1317741749 f:\roseza git\trunk\world server\party.h
+1317745349 f:\roseza git\trunk\world server\party.h
 	"worldserver.h"
 	"datatypes.h"
 
-1317741749 f:\roseza git\trunk\world server\stbhandler.h
+1317745349 f:\roseza git\trunk\world server\stbhandler.h
 	"worldserver.h"
 
-1317741749 f:\roseza git\trunk\world server\stlhandler.h
+1317745349 f:\roseza git\trunk\world server\stlhandler.h
 	"worldserver.h"
 
-1317741748 f:\roseza git\trunk\world server\quest\strhashing.h
+1317745348 f:\roseza git\trunk\world server\quest\strhashing.h
 
-1317741748 f:\roseza git\trunk\world server\quest\crosearray.hpp
+1317745348 f:\roseza git\trunk\world server\quest\crosearray.hpp
 	<memory.h>
 
-1317741748 f:\roseza git\trunk\world server\quest\crosefile.hpp
+1317745348 f:\roseza git\trunk\world server\quest\crosefile.hpp
 	<stdio.h>
 	<stdlib.h>
 	"CRoseArray.hpp"
 
-1317741749 f:\roseza git\trunk\world server\quest\cstrstb.hpp
+1317745349 f:\roseza git\trunk\world server\quest\cstrstb.hpp
 
-1317741749 f:\roseza git\trunk\world server\quest\cintstb.hpp
+1317745349 f:\roseza git\trunk\world server\quest\cintstb.hpp
 
-1317741749 f:\roseza git\trunk\world server\quest\questtrigger.h
+1317745349 f:\roseza git\trunk\world server\quest\questtrigger.h
 	"QuestConditions.h"
 	"QuestActions.h"
 
-1329320303 f:\roseza git\trunk\world server\quest\questconditions.h
+1329323903 f:\roseza git\trunk\world server\quest\questconditions.h
 
-1484677786 f:\roseza git\trunk\world server\quest\questactions.h
+1484681386 f:\roseza git\trunk\world server\quest\questactions.h
 
-1317741750 f:\roseza git\trunk\world server\ltbhandler.h
+1317745350 f:\roseza git\trunk\world server\ltbhandler.h
 	"worldserver.h"
 	<map>
 
-1317741746 f:\roseza git\trunk\world server\aip\aip.h
+1317745346 f:\roseza git\trunk\world server\aip\aip.h
 	"AiConditions.h"
 	"AiActions.h"
 
-1329239844 f:\roseza git\trunk\world server\aip\aiconditions.h
+1329243444 f:\roseza git\trunk\world server\aip\aiconditions.h
 
-1329239844 f:\roseza git\trunk\world server\aip\aiactions.h
+1329243444 f:\roseza git\trunk\world server\aip\aiactions.h
 
-1317741750 source:f:\roseza git\trunk\world server\monster.cpp
+1317745350 source:f:\roseza git\trunk\world server\monster.cpp
 	"worldmonster.h"
 
-1330699255 source:f:\roseza git\trunk\world server\monsterevents.cpp
+1330702855 source:f:\roseza git\trunk\world server\monsterevents.cpp
 	"worldmonster.h"
 
-1317747446 source:f:\roseza git\trunk\world server\monsterstats.cpp
+1317751046 source:f:\roseza git\trunk\world server\monsterstats.cpp
 	"worldmonster.h"
 
-1317741749 source:f:\roseza git\trunk\world server\party.cpp
+1317745349 source:f:\roseza git\trunk\world server\party.cpp
 	"worldserver.h"
 
-1484677592 source:f:\roseza git\trunk\world server\serverfunctions.cpp
+1484681192 source:f:\roseza git\trunk\world server\serverfunctions.cpp
 	"worldserver.h"
 
-1317741750 source:f:\roseza git\trunk\world server\signal.cpp
+1317745350 source:f:\roseza git\trunk\world server\signal.cpp
 	"worldserver.h"
 
-1317741749 source:f:\roseza git\trunk\world server\worldmonster.cpp
+1317745349 source:f:\roseza git\trunk\world server\worldmonster.cpp
 	"worldmonster.h"
 
-1484677592 source:f:\roseza git\trunk\world server\worldprocess.cpp
+1484681192 source:f:\roseza git\trunk\world server\worldprocess.cpp
 	"worldserver.h"
 
-1486140225 source:f:\roseza git\trunk\world server\aip\aiactions.cpp
+1486143825 source:f:\roseza git\trunk\world server\aip\aiactions.cpp
 	"../WorldServer.h"
 
-1333982162 source:f:\roseza git\trunk\world server\aip\aiconditions.cpp
+1333985762 source:f:\roseza git\trunk\world server\aip\aiconditions.cpp
 	"../WorldServer.h"
 
-1329239844 source:f:\roseza git\trunk\world server\aip\aip.cpp
+1329243444 source:f:\roseza git\trunk\world server\aip\aip.cpp
 	"../WorldServer.h"
 
-1486063747 source:f:\roseza git\trunk\world server\battle.cpp
+1486067347 source:f:\roseza git\trunk\world server\battle.cpp
 	"character.h"
 	"worldserver.h"
 
-1331137756 source:f:\roseza git\trunk\world server\character.cpp
+1331141356 source:f:\roseza git\trunk\world server\character.cpp
 	"character.h"
 	"worldserver.h"
 
-1317741750 source:f:\roseza git\trunk\world server\charevent.cpp
+1317745350 source:f:\roseza git\trunk\world server\charevent.cpp
 	"character.h"
 
-1330370837 source:f:\roseza git\trunk\world server\charfunctions.cpp
+1330374437 source:f:\roseza git\trunk\world server\charfunctions.cpp
 	"character.h"
 	"worldserver.h"
 	<cmath>
 
-1323451982 source:f:\roseza git\trunk\world server\charstats.cpp
+1323455582 source:f:\roseza git\trunk\world server\charstats.cpp
 	"character.h"
 
-1317741749 source:f:\roseza git\trunk\world server\clan.cpp
+1317745349 source:f:\roseza git\trunk\world server\clan.cpp
 	"worldserver.h"
 
-1322489371 source:f:\roseza git\trunk\world server\console.cpp
+1322492971 source:f:\roseza git\trunk\world server\console.cpp
 	"WorldServer.h"
 
-1333980475 source:f:\roseza git\trunk\world server\extrafunctions.cpp
+1333984075 source:f:\roseza git\trunk\world server\extrafunctions.cpp
 	"worldserver.h"
 
-1486067789 source:f:\roseza git\trunk\world server\gmcmds.cpp
+1486071389 source:f:\roseza git\trunk\world server\gmcmds.cpp
 	"worldserver.h"
 	"player.h"
 	"datatypes.h"
 
-1317741750 source:f:\roseza git\trunk\world server\itemdata.cpp
+1317745350 source:f:\roseza git\trunk\world server\itemdata.cpp
 	"datatypes.h"
 
-1317741749 source:f:\roseza git\trunk\world server\ltbhandler.cpp
+1317745349 source:f:\roseza git\trunk\world server\ltbhandler.cpp
 	"ltbhandler.h"
 
-1317741749 source:f:\roseza git\trunk\world server\main.cpp
+1317745349 source:f:\roseza git\trunk\world server\main.cpp
 	"worldserver.h"
 
-1330115779 source:f:\roseza git\trunk\world server\mapfunctions.cpp
+1330119379 source:f:\roseza git\trunk\world server\mapfunctions.cpp
 	"worldmap.h"
 
-1317741749 source:f:\roseza git\trunk\world server\monsterfunctions.cpp
+1317745349 source:f:\roseza git\trunk\world server\monsterfunctions.cpp
 	"worldmonster.h"
 
-1317741751 source:f:\roseza git\trunk\world server\partyfunctions.cpp
+1317745351 source:f:\roseza git\trunk\world server\partyfunctions.cpp
 	"party.h"
 
-1324571904 source:f:\roseza git\trunk\world server\player.cpp
+1324575504 source:f:\roseza git\trunk\world server\player.cpp
 	"player.h"
 	"worldserver.h"
 
-1322489371 source:f:\roseza git\trunk\world server\playerdata.cpp
+1322492971 source:f:\roseza git\trunk\world server\playerdata.cpp
 	"player.h"
 	"worldserver.h"
 
-1484677592 source:f:\roseza git\trunk\world server\playerfunctions.cpp
+1484681192 source:f:\roseza git\trunk\world server\playerfunctions.cpp
 	"player.h"
 	"worldserver.h"
 
-1317741749 source:f:\roseza git\trunk\world server\playerquest.cpp
+1317745349 source:f:\roseza git\trunk\world server\playerquest.cpp
 	"player.h"
 	"worldserver.h"
 
-1326895360 source:f:\roseza git\trunk\world server\playerstats.cpp
+1326898960 source:f:\roseza git\trunk\world server\playerstats.cpp
 	"player.h"
 	"worldserver.h"
 
-1317741749 source:f:\roseza git\trunk\world server\quest.cpp
+1317745349 source:f:\roseza git\trunk\world server\quest.cpp
 	"worldserver.h"
 
-1484678734 source:f:\roseza git\trunk\world server\quest\questactions.cpp
+1484682334 source:f:\roseza git\trunk\world server\quest\questactions.cpp
 	"../worldserver.h"
 
-1329330015 source:f:\roseza git\trunk\world server\quest\questactionsc.cpp
+1329333615 source:f:\roseza git\trunk\world server\quest\questactionsc.cpp
 	"../worldserver.h"
 
-1483737171 source:f:\roseza git\trunk\world server\quest\questconditions.cpp
+1483740771 source:f:\roseza git\trunk\world server\quest\questconditions.cpp
 	"../worldserver.h"
 
-1329489513 source:f:\roseza git\trunk\world server\quest\questconditionsc.cpp
+1329493113 source:f:\roseza git\trunk\world server\quest\questconditionsc.cpp
 	"../worldserver.h"
 
-1483633763 source:f:\roseza git\trunk\world server\quest\quests.cpp
+1483637363 source:f:\roseza git\trunk\world server\quest\quests.cpp
 	"../worldserver.h"
 
-1317741749 source:f:\roseza git\trunk\world server\quest\strhashing.cpp
+1317745349 source:f:\roseza git\trunk\world server\quest\strhashing.cpp
 	"../worldserver.h"
 	"strhashing.h"
 
-1483650863 source:f:\roseza git\trunk\world server\startup.cpp
+1483654463 source:f:\roseza git\trunk\world server\startup.cpp
 	"worldserver.h"
 
-1317741750 source:f:\roseza git\trunk\world server\stbhandler.cpp
+1317745350 source:f:\roseza git\trunk\world server\stbhandler.cpp
 	"worldserver.h"
 
-1317741749 source:f:\roseza git\trunk\world server\stlhandler.cpp
+1317745349 source:f:\roseza git\trunk\world server\stlhandler.cpp
 	"worldserver.h"
 
-1330961425 source:f:\roseza git\trunk\world server\worldmap.cpp
+1330965025 source:f:\roseza git\trunk\world server\worldmap.cpp
 	"worldmap.h"
 
 1487957542 source:f:\roseza git\trunk\world server\worldpackets.cpp
 	"worldserver.h"
 
-1487955632 source:f:\roseza git\trunk\world server\worldserver.cpp
+1487959232 source:f:\roseza git\trunk\world server\worldserver.cpp
 	"worldserver.h"
 	<fstream>
 
-1485887104 source:f:\roseza git\trunk\world server\mainprocess.cpp
+1485890704 source:f:\roseza git\trunk\world server\mainprocess.cpp
 	"worldserver.h"
 

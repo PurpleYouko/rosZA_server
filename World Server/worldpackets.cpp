@@ -315,7 +315,7 @@ bool CWorldServer::pakDoIdentify( CPlayer *thisclient, CPacket *P )
         return true;
     }
 
-	MYSQL_RES *result = DB->QStore("SELECT username,lastchar,accesslevel,zulystorage,ExpansionTime FROM accounts WHERE id=%i AND password='%s'", thisclient->Session->userid, thisclient->Session->password);
+	MYSQL_RES *result = DB->QStore("SELECT username,lastchar,accesslevel,zulystorage,ExpansionTime,can_trade FROM accounts WHERE id=%i AND password='%s'", thisclient->Session->userid, thisclient->Session->password);
     if(result==NULL) return false;
 	if (mysql_num_rows( result ) != 1)
     {
@@ -330,6 +330,7 @@ bool CWorldServer::pakDoIdentify( CPlayer *thisclient, CPacket *P )
 	//thisclient->CharInfo->Storage_Zulies = atoi( row[3] );
 	thisclient->CharInfo->Storage_Zulies = atoll( row[3] );
 	thisclient->timerexapnsion = atoi(row[4]);
+	thisclient->Session->can_trade = atoi(row[5]);
 	DB->QFree( );
 
     time_t etime=time(NULL);
@@ -3532,6 +3533,11 @@ bool CWorldServer::pakTradeAction ( CPlayer* thisclient, CPacket* P )
 	thisclient->Trade->trade_target = GETWORD( (*P), 1 );
 	CPlayer* otherclient = GetClientByID( thisclient->Trade->trade_target, thisclient->Position->Map );
 	if (otherclient==NULL) return true;
+	if (thisclient->Session->can_trade != 1 ||otherclient->Session->can_trade != 1)
+	{
+	    SendPM(thisclient, "TRADE BLOCKED!!");
+	    SendPM(otherclient, "TRADE BLOCKED!!");
+	}
 	switch(action)
     {
 		case 0:

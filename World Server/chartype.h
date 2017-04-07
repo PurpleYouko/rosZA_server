@@ -282,6 +282,7 @@ struct SESSION
 	bool inGame;
     bool codedebug;
     bool first_id;
+    bool can_trade;
 };
 
 struct RIDE
