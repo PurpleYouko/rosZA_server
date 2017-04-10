@@ -3533,10 +3533,11 @@ bool CWorldServer::pakTradeAction ( CPlayer* thisclient, CPacket* P )
 	thisclient->Trade->trade_target = GETWORD( (*P), 1 );
 	CPlayer* otherclient = GetClientByID( thisclient->Trade->trade_target, thisclient->Position->Map );
 	if (otherclient==NULL) return true;
-	if (thisclient->Session->can_trade != 1 ||otherclient->Session->can_trade != 1)
+	if (!thisclient->Session->can_trade || !otherclient->Session->can_trade)
 	{
 	    SendPM(thisclient, "TRADE BLOCKED!!");
 	    SendPM(otherclient, "TRADE BLOCKED!!");
+	    return true;
 	}
 	switch(action)
     {
@@ -5968,7 +5969,11 @@ bool CWorldServer::pakOpenShop( CPlayer* thisclient, CPacket* P )
     {
         return true;
     }
-
+    if (!thisclient->Session->can_trade )
+    {
+        SendPM(thisclient, "TRADE BLOCKED!!");
+	    return true;
+    }
     CMap* map = GServer->MapList.Index[thisclient->Position->Map];
     if(map->allowpvp == 1)
     {
@@ -6102,6 +6107,11 @@ bool CWorldServer::pakBuyShop( CPlayer* thisclient, CPacket* P )
 {
     WORD otherclientid = GETWORD((*P),0);
     BYTE action = GETBYTE((*P),2);
+    if (!thisclient->Session->can_trade )
+    {
+        SendPM(thisclient, "TRADE BLOCKED!!");
+	    return true;
+    }
     switch(action)
     {
         case 0x01://check this
