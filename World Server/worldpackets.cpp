@@ -963,6 +963,11 @@ bool CWorldServer::pakDoDrop( CPlayer* thisclient, CPacket* P )
     {
         return true;
     }
+    if (!thisclient->Session->can_trade )//block dropping for anyone who is not allowed to trade
+	{
+	    SendPM(thisclient, "DROP ACTION BLOCKED!!");
+	    return true;
+	}
 
 	BYTE itemid = GETBYTE((*P), 0x0);
 	if(!CheckInventorySlot(thisclient, itemid ))
