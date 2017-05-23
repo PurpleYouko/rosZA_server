@@ -179,9 +179,9 @@
 		<Cursor position="1123" topLine="75" />
 	</File>
 	<File name="..\World Server\worldpackets.cpp" open="1" top="1" tabpos="22">
-		<Cursor position="218567" topLine="6575" />
+		<Cursor position="32699" topLine="935" />
 	</File>
 	<File name="..\World Server\worldserver.cpp" open="1" top="0" tabpos="21">
-		<Cursor position="36409" topLine="810" />
+		<Cursor position="34603" topLine="810" />
 	</File>
 </CodeBlocks_layout_file>
