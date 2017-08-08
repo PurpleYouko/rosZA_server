@@ -69,6 +69,8 @@ void CCharacter::StartAction( CCharacter* Target, BYTE action, UINT skillid, boo
     }
     else
     {
+        //action = 2; //SKILL_ATTACK      force all monsters to use skill attack here.
+        //skillid = 1117; //Permafrost chill.
         Log(MSG_INFO,"A Monster does an action %i, skill %i",action,skillid);
     }
 

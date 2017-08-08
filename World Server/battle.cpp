@@ -135,6 +135,8 @@ void CCharacter::DoAttack( )
                 }
 
                 NormalAttack( Enemy );
+                //CSkills* skill = GServer->GetSkillByID( 1117 );     //permafrost chill Mage spell just for giggles. Should do shit loads of damage
+                //SkillAttack( Enemy, skill );
 
                 if (Enemy->IsMonster()) // do monster AI script when monster is attacked.
                 {
@@ -210,6 +212,7 @@ void CCharacter::DoAttack( )
             }
             if(IsTargetReached( Enemy, skill ) && CanAttack( ))
             {
+                Log(MSG_INFO,"DoAttack, SKILL_ATTACK, target (%.2f,%.2f)",Position->aoedestiny.x,Position->aoedestiny.y);
                 SkillAttack( Enemy, skill );
 
 				//Some skill attacks has aoe effects
@@ -1096,8 +1099,9 @@ bool CCharacter::ResumeNormalAttack( CCharacter* Enemy,bool was_aoe)
 // do skill attack
 bool CCharacter::SkillAttack( CCharacter* Enemy, CSkills* skill )
 {
+    //Log(MSG_INFO,"SkillAttack, Performing skill %i",skill->skilltype);
     Position->destiny = Position->current;
-    if(Battle->castTime==0)
+    if(Battle->castTime == 0)
     {
         BEGINPACKET( pak, 0x7bb );
         ADDWORD    ( pak, clientid );
@@ -1727,8 +1731,9 @@ bool CCharacter::AoeDebuff( CSkills* skill, CCharacter* Enemy )
 // use skill attack
 void CCharacter::UseAtkSkill( CCharacter* Enemy, CSkills* skill, bool deBuff )
 {
+    Log(MSG_INFO,"UseAtkSkill, Performing skill %i",skill->skilltype);
     //LMA: Sometimes it's fired several times, no need to kill several times ;)
-    bool is_already_dead=Enemy->IsDead();
+    bool is_already_dead = Enemy->IsDead();
 
     //We Check if The Skill need a Bow, Gun, Launcher or Crossbow and reduce the number of Arrow, Bullet or Canon the player have by 1 (Client is Buged)
     bool need_arrows=false;
@@ -1921,6 +1926,7 @@ void CCharacter::UseAtkSkill( CCharacter* Enemy, CSkills* skill, bool deBuff )
     //If Enemy is killed
     if(Enemy->IsDead())
     {
+        //Log(MSG_INFO,"Enemy is dead");
         //LMA: Skillpower elsewhere.
         //ADDDWORD   ( pak, Enemy->Stats->MaxHP);
         ADDDWORD   ( pak, skillpower);
@@ -1929,6 +1935,7 @@ void CCharacter::UseAtkSkill( CCharacter* Enemy, CSkills* skill, bool deBuff )
         //if (!is_already_dead&&(GServer->MapList.Index[Position->Map]->QSDkilling>0||GServer->MapList.Index[Position->Map]->QSDDeath>0)&&IsPlayer()&&Enemy->IsPlayer())
         if (!is_already_dead&&((GServer->MapList.Index[Position->Map]->QSDkilling>0&&IsPlayer()&&Enemy->IsPlayer())||(GServer->MapList.Index[Position->Map]->QSDDeath&&Enemy->IsPlayer())))
         {
+
             if(GServer->ServerDebug)
                 Log(MSG_INFO,"UWKILL begin skill atk");
             UWKill(Enemy);
@@ -1985,26 +1992,32 @@ void CCharacter::UseAtkSkill( CCharacter* Enemy, CSkills* skill, bool deBuff )
 
         GServer->SendToVisible( &pak, Enemy );
         //LMA: end of test.
-
+        //Log(MSG_INFO,"Sent to visible");
         //LMA: test
         //OnEnemyDie( Enemy );
         ClearBattle(Battle);
-        if(!is_already_dead)
+        if(!is_already_dead && !Enemy->IsPlayer())
         {
+            //Log(MSG_INFO,"Enemy NOT already dead");
             CMonster* monster = GServer->GetMonsterByID(Enemy->clientid, Enemy->Position->Map);
             if(monster->TD)
+            {
                 GServer->TDMonCount --;
-            Log(MSG_WARNING,"TD monster died. Current TD Monster Count is %i",GServer->TDMonCount);
+                Log(MSG_WARNING,"TD monster died. Current TD Monster Count is %i",GServer->TDMonCount);
+            }
             TakeExp(Enemy);
+
         }
         //end of test.
 
         //LMA: Special Packet to tell if the player is dead?
         if(Enemy->IsPlayer())
         {
+            //Log(MSG_INFO,"Enemy is a player");
             CPlayer* plkilled=(CPlayer*) Enemy;
             if(plkilled!=NULL)
             {
+                //Log(MSG_WARNING,"Player %s killed",plkilled->CharInfo->charname);
                 BEGINPACKET( pak, 0x820 );
                 ADDWORD    ( pak, 1 );
                 ADDWORD    ( pak, 0 );
@@ -2018,6 +2031,10 @@ void CCharacter::UseAtkSkill( CCharacter* Enemy, CSkills* skill, bool deBuff )
 					plkilled->MagicStatus[i].BuffTime = 0;
 				}
 				plkilled->RefreshBuff();
+            }
+            else
+            {
+                Log(MSG_INFO,"plkilled did not initialize properly");
             }
 
         }
@@ -2092,7 +2109,7 @@ void CCharacter::UseAtkSkill( CCharacter* Enemy, CSkills* skill, bool deBuff )
     Battle->skillid = 0;
     Battle->atktype = NORMAL_ATTACK;*/
     //osprose end
-
+    Log(MSG_INFO,"UseAtkSkill function completed and returning");
     return;
 }
 
