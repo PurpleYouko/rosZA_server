@@ -137,6 +137,7 @@ bool CClientSocket::ReceiveData( )
 	FILE *fh = fopen(  "log/receivedpackets.log", "a+" );
 	if ( fh != NULL ) {
 		fprintf( fh, "(SID:%08u) IN  %04x: ", sock, pak->Command );
+		fprintf( fh, "%04x %04x %04x : ", pak->Size, pak->Command, pak->Unused );
 		for ( int i=0; i<pak->Size-6; ++i ) fprintf( fh, "%02x ", (unsigned char)pak->Buffer[i] );
 		fprintf( fh, "\n" );
 		fclose( fh );
@@ -215,6 +216,7 @@ void CClientSocket::SendPacket( CPacket *P )
 	FILE *fh = fopen(  "log/receivedpackets.log", "a+" );
 	if ( fh != NULL ) {
 		fprintf( fh, "(SID:%08u) OUT  %04x: ", sock, P->Command );
+		fprintf( fh, "%04x %04x %04x : ", P->Size, P->Command, P->Unused );
 		for ( int i=0; i<P->Size-6; ++i ) fprintf( fh, "%02x ", (unsigned char)P->Buffer[i] );
 		fprintf( fh, "\n" );
 		fclose( fh );

@@ -974,7 +974,7 @@
 1317745346 f:\roseza git\trunk\common\database\database.h
 	"../sockets.h"
 
-1333553802 source:f:\roseza git\trunk\common\socketclient.cpp
+1506521809 source:f:\roseza git\trunk\common\socketclient.cpp
 	"sockets.h"
 
 1317745346 source:f:\roseza git\trunk\common\socketserver.cpp
@@ -1128,7 +1128,7 @@
 1329243444 source:f:\roseza git\trunk\world server\aip\aip.cpp
 	"../WorldServer.h"
 
-1502125039 source:f:\roseza git\trunk\world server\battle.cpp
+1502125810 source:f:\roseza git\trunk\world server\battle.cpp
 	"character.h"
 	"worldserver.h"
 
@@ -1139,7 +1139,7 @@
 1317745350 source:f:\roseza git\trunk\world server\charevent.cpp
 	"character.h"
 
-1502121453 source:f:\roseza git\trunk\world server\charfunctions.cpp
+1502125811 source:f:\roseza git\trunk\world server\charfunctions.cpp
 	"character.h"
 	"worldserver.h"
 	<cmath>

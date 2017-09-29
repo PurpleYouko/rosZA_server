@@ -1323,23 +1323,23 @@ void CPlayer::clearquest(CPlayer* thisclient)
 //LMA: getting the family skill.
 int CPlayer::GoodSkill(int skill_id)
 {
-    if (skill_id>GServer->maxSkills)
+    if (skill_id > GServer->maxSkills)
     {
         Log(MSG_WARNING,"Bad skill_id in GoodSkill (%i>%u)",skill_id,GServer->maxSkills);
         return -1;
     }
 
-    int type=GServer->SkillList[skill_id]->skill_tab;
+    int type = GServer->SkillList[skill_id]->skill_tab;
 
-    if (type==11)
+    if (type == 11)
         return 2;   //basic
-    if (type==41)
+    if (type == 41)
         return 3;   //unique
-    if (type==51)
+    if (type == 51)
         return 4;   //mileage
-    if (type>=20&&type<30)
+    if (type >= 20 && type <30)
         return 0;   //class
-    if (type>=30&&type<40)
+    if (type >= 30 && type < 40)
         return 1;   //driving and others?
 
 

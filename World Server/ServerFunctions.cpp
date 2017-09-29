@@ -1517,21 +1517,21 @@ bool CWorldServer::LearnSkill( CPlayer* thisclient, UINT skill, bool takeSP)
     if(GServer->SkillList[skill]->skill_tab==0)
     {
         Log(MSG_WARNING,"%s:: Incorrect or empty skill %i",thisclient->CharInfo->charname,skill);
-        b=6;
+        b = 6;
     }
 
     if(takeSP&&thisclient->CharInfo->SkillPoints<thisskill->sp )
     {
         Log(MSG_WARNING,"%s:: not enough skill points (%u<%u) for skill %u",thisclient->CharInfo->charname,thisclient->CharInfo->SkillPoints,thisskill->sp,skill);
-        b=7;
+        b = 7;
     }
     else if( thisskill->clevel>thisclient->Stats->Level )
     {
         Log(MSG_WARNING,"%s:: incorrect level for skill %u (%u<%u)",thisclient->CharInfo->charname,skill,thisskill->clevel,thisclient->Stats->Level);
-        b=4;
+        b = 4;
     }
 
-    if(b==1)
+    if(b == 1)
     {
         UINT rclass = 0;
         for(UINT i=0;i<4; i++)
@@ -1604,7 +1604,7 @@ bool CWorldServer::LearnSkill( CPlayer* thisclient, UINT skill, bool takeSP)
             }
         }
     }
-    if(b==1)
+    if(b == 1)
     {
         for(UINT i=0;i<3; i++)
         {
@@ -1632,11 +1632,11 @@ bool CWorldServer::LearnSkill( CPlayer* thisclient, UINT skill, bool takeSP)
 
     }
 
-    if(b==1)
+    if(b == 1)
     {
         //LMA: Looking for good place to save it now...
-        int family=thisclient->GoodSkill(skill);
-        if(family==-1)
+        int family = thisclient->GoodSkill(skill);
+        if(family == -1)
         {
             Log(MSG_WARNING,"%s:: Can't find family for skill %i",thisclient->CharInfo->charname,skill);
             b=6;
