@@ -106,11 +106,11 @@
 	<File name="..\World Server\console.cpp" open="0" top="0" tabpos="29">
 		<Cursor position="1830" topLine="42" />
 	</File>
-	<File name="..\World Server\datatypes.h" open="0" top="0" tabpos="2">
-		<Cursor position="7311" topLine="218" />
+	<File name="..\World Server\datatypes.h" open="1" top="0" tabpos="13">
+		<Cursor position="27801" topLine="1134" />
 	</File>
-	<File name="..\World Server\extrafunctions.cpp" open="0" top="0" tabpos="25">
-		<Cursor position="25891" topLine="961" />
+	<File name="..\World Server\extrafunctions.cpp" open="1" top="0" tabpos="12">
+		<Cursor position="45149" topLine="1590" />
 	</File>
 	<File name="..\World Server\gmcmds.cpp" open="0" top="0" tabpos="4">
 		<Cursor position="73934" topLine="1929" />
@@ -139,8 +139,8 @@
 	<File name="..\World Server\playerstats.cpp" open="0" top="0" tabpos="8">
 		<Cursor position="107578" topLine="2513" />
 	</File>
-	<File name="..\World Server\quest\QuestActions.cpp" open="0" top="0" tabpos="11">
-		<Cursor position="37270" topLine="1094" />
+	<File name="..\World Server\quest\QuestActions.cpp" open="1" top="0" tabpos="11">
+		<Cursor position="1445" topLine="9" />
 	</File>
 	<File name="..\World Server\quest\QuestActions.h" open="0" top="0" tabpos="14">
 		<Cursor position="3152" topLine="78" />
@@ -178,10 +178,10 @@
 	<File name="..\World Server\worldmap.h" open="0" top="0" tabpos="10">
 		<Cursor position="1123" topLine="75" />
 	</File>
-	<File name="..\World Server\worldpackets.cpp" open="1" top="0" tabpos="6">
-		<Cursor position="169062" topLine="4592" />
+	<File name="..\World Server\worldpackets.cpp" open="1" top="1" tabpos="6">
+		<Cursor position="155769" topLine="4182" />
 	</File>
-	<File name="..\World Server\worldserver.cpp" open="1" top="1" tabpos="5">
+	<File name="..\World Server\worldserver.cpp" open="1" top="0" tabpos="5">
 		<Cursor position="35354" topLine="805" />
 	</File>
 </CodeBlocks_layout_file>
