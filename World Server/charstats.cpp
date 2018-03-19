@@ -123,7 +123,7 @@ float CCharacter::GetAttackDistance( )
     return 0;
 }
 
-double CCharacter::GetBlockRate()
+unsigned int CCharacter::GetBlockRate()
 {
     return 0;
 }

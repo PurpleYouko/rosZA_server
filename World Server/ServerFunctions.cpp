@@ -420,6 +420,7 @@ int CPlayer::ExecuteQuestTrigger(dword hash,bool send_packet, UINT index)
     CQuestTrigger* nexttrigger = NULL;
     CheckQuest = -1;
 	if (GServer->questdebug)
+        Log(MSG_QUESTDEBUG, "ExecuteQuestTrigger:: Trigger executing");
 
     for(unsigned j=0; j < GServer->TriggerList.size(); j++)
     {

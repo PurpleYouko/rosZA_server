@@ -2526,8 +2526,8 @@ UINT CPlayer::GetAttackSpeed( )
         UINT wpnspd = 0;
         wpnspd = GServer->EquipList[WEAPON].Index[items[7].itemnum]->attackspeed;
 
-        float temp_speed=88+((ind_0-wpnspd)*5);
-        if (temp_speed<=0||wpnspd==0)
+        UINT temp_speed = 88 + ((ind_0 - wpnspd) * 5 );
+        if (temp_speed <= 0 || wpnspd == 0)
         {
             Log(MSG_WARNING,"Weird Aspeed value for weapon value=%i (STB ASpeed=%i)",items[7].itemnum,wpnspd);
             temp_speed=88;
@@ -4822,10 +4822,10 @@ unsigned int CPlayer::GetGreyDrops( )
     return GreyDropRate;
 }
 
-double CPlayer::GetBlockRate( )
+unsigned int CPlayer::GetBlockRate( )
 {
-    double pBlock_Rate = 0;
-    double itemBlock_Rate = 0;
+    unsigned int pBlock_Rate = 0;
+    unsigned int itemBlock_Rate = 0;
 
     if(Status->Stance != DRIVING)
     {

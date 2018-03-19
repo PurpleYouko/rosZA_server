@@ -315,7 +315,7 @@ class CPlayer: public CCharacter
     unsigned int GetMoveSpeed( );
     unsigned int GetCartSpeed( );
 	unsigned int GetMagicAttack( );
-	double GetBlockRate( );
+	unsigned int GetBlockRate( );
 	unsigned int GetBlockedDamage( );
 	unsigned int GetDropAmount( );
 

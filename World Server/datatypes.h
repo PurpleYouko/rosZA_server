@@ -442,7 +442,7 @@ struct CEquip
     UINT condition2[3];
     int stat1[2];
     int stat2[2];
-    double BlockRate;
+    UINT BlockRate;
     UINT defense;
     UINT magicresistence;
 	UINT magicattack;

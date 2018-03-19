@@ -158,7 +158,7 @@ class CCharacter
         virtual unsigned int GetCritical( );
         virtual unsigned int GetAttackSpeed( );
         virtual float GetAttackSpeedPercent( );
-        virtual double GetBlockRate( );
+        virtual unsigned int GetBlockRate( );
         virtual unsigned int GetBlockedDamage( );
         virtual unsigned int GetMoveSpeed( );
         //virtual unsigned int GetMaxHP( );

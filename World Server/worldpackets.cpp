@@ -3126,7 +3126,7 @@ bool CWorldServer::pakNPCBuy ( CPlayer* thisclient, CPacket* P )
             case 14:
             {
                 float price = 0;
-                price = 7.142857E-05F * 5000;
+                //price = 7.142857E-05F * 5000;
                 if(thisitem.itemtype<10)
                 {
                     price *= EquipList[thisitem.itemtype].Index[thisitem.itemnum]->price;
@@ -3135,20 +3135,29 @@ bool CWorldServer::pakNPCBuy ( CPlayer* thisclient, CPacket* P )
                 {
                     price *= PatList.Index[thisitem.itemnum]->price;
                 }
-                price *= thisitem.durability + 0xc8;
-                price *= 40;
-                price *= 0xc8 - 0x62; //town rate
-                price *= 1.000000E-06;
-					//Should fix the merchandising skill
-                    for(int i = 0;i<MAX_CLASS_SKILL;i++)
+
+                price *= (40 + thisitem.refine);
+                price *= (200 + thisitem.durability);
+                price *= 102;           //200 - world rate 0f 0x062 (98)
+                for(int i = 0;i<MAX_CLASS_SKILL;i++)
+                {
+                    if(thisclient->cskills[i].id == 2286)
                     {
-                        if(thisclient->cskills[i].id == 2286)
-                        {
-                            price += (((price * thisclient->cskills[i].thisskill->value2[0]) / 100));
-                            Log(MSG_INFO,"%i percent added to selling price.", thisclient->cskills[i].thisskill->value2[0]);
-                        }
+                        price *= (1 + thisclient->cskills[i].thisskill->value2[0] * 0.01f) / 1000000;
                     }
+                }
+                price *= ((4000 + thisitem.lifespan) / 14000.f );
+                if (thisitem.appraised)
+                    price += (EquipList[7].Index[thisitem.gem]->price * 0.2f);
                 price = (float)floor(price);
+
+                //price *= thisitem.durability + 0xc8;
+                //price *= 40;
+                //price *= 0xc8 - 0x62; //town rate
+                //price *= 1.000000E-06;
+					//Should fix the merchandising skill
+
+                //price = (float)floor(price);
     			Log( MSG_INFO, "%s:: Item Sold: itemnum %i, itemtype %i, itemcount %i, price %0.0f",thisclient->CharInfo->charname,thisitem.itemnum, thisitem.itemtype, thisitem.count, price);
         		thisclient->CharInfo->Zulies += (long int)price*count;
             }
@@ -3156,13 +3165,14 @@ bool CWorldServer::pakNPCBuy ( CPlayer* thisclient, CPacket* P )
             case 10:
             case 12:
             {
+                // Sale Price = ITEM_BASE * { 1000 + (ITEM_RATE - 50) * ITEM_FLUC } * (1 + Sales skill level * 0.02) * (200- WORLD_RATE) / 200000      (formula from client)
                 // this values are the same from packet 753
                 BYTE values[11] = {0x32, 0x32, 0x32, 0x32, 0x32, 0x32, 0x32, 0x32, 0x32, 0x32, 0x32};
                 UINT type = 0;
                 UINT bprice = 0;
                 UINT pricerate = 0;
                 UINT pvalue = 0;
-                if(thisitem.itemtype==10)
+                if(thisitem.itemtype == 10)
                 {
                    type = UseList.Index[thisitem.itemnum]->type;
                    bprice = UseList.Index[thisitem.itemnum]->price;

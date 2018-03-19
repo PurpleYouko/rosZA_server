@@ -93,7 +93,7 @@ struct STATS
     unsigned int itemdroprate;
     unsigned int zulydroprate;
     unsigned int greydrop;
-    double Block_Rate;
+    unsigned int Block_Rate;
     unsigned int Blocked_dmg;
     unsigned int Drop_Amount;
     int ItemXPRate;

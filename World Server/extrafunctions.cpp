@@ -1464,7 +1464,7 @@ CUseInfo* CWorldServer::GetUseItemInfo(CPlayer* thisclient, unsigned int slot )
         case 312://Food
         {
             useitem->usescript = 1;
-            useitem->usetype = UseList.Index[useitem->itemnum]->useeffect[0];
+            useitem->usetype = UseList.Index[useitem->itemnum]->usecondition[1];
             useitem->usevalue = UseList.Index[useitem->itemnum]->useeffect[1];
             useitem->cooldown_type=UseList.Index[useitem->itemnum]->cooldown_type;
             useitem->cooldown=UseList.Index[useitem->itemnum]->cooldown;
@@ -1492,7 +1492,7 @@ CUseInfo* CWorldServer::GetUseItemInfo(CPlayer* thisclient, unsigned int slot )
                 (useitem->itemnum >= 1035 && useitem->itemnum <= 1039))
             {
                 useitem->usescript = 0;
-                useitem->usetype = UseList.Index[useitem->itemnum]->useeffect[0]; // don't really need this as it is zero
+                useitem->usetype = UseList.Index[useitem->itemnum]->usecondition[1]; // don't really need this as it is zero
                 useitem->usevalue = UseList.Index[useitem->itemnum]->useeffect[1];
             }
 
