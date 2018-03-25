@@ -4,11 +4,11 @@ REM ############################################
 REM ## You can change here your own DB params ##
 REM ############################################
 REM MYSQL BIN PATH
-set mysqlBinPath=C:\Program Files\MySQL\MySQL Server 5.0\bin
+set mysqlBinPath=C:\xampp\mysql\bin
 
 set user=root
-set pass=1@34qwer
-set db=rosetest
+set pass=
+set db=osrose
 set host=localhost
 
 REM ############################################
