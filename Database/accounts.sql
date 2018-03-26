@@ -43,6 +43,8 @@ CREATE TABLE IF NOT EXISTS `accounts` (
   `logtime` int(11) NOT NULL default '0',
   `totlogtime` int(11) NOT NULL default '0',
   `can_trade` tinyint(1) NOT NULL default '1',
+  `ExpansionTime` int(11) NOT NULL DEFAULT '0',
+  `counter` int(7) DEFAULT NULL,										   
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=85 ;
 
