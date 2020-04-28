@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{2DEB248A-D354-4D54-A3B6-F92722F83D41}</ProjectGuid>
+    <RootNamespace>worldserver</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\Server.Run.2</OutDir>
+    <IntDir>$(SolutionDir)build\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\3rd_party\pthread\include;$(ProjectDir)..\3rd_party\mysql\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_TIMESPEC_DEFINED;_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <FunctionLevelLinking>
+      </FunctionLevelLinking>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <AdditionalOptions>
+      </AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)3rd_party\mysql\lib;$(SolutionDir)3rd_party\pthread\lib\x86;$(SolutionDir)bin\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libmysql.lib;pthreadvc2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>
+      </SubSystem>
+      <LinkTimeCodeGeneration>
+      </LinkTimeCodeGeneration>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\Common\config.h" />
+    <ClInclude Include="..\src\Common\database\database.h" />
+    <ClInclude Include="..\src\Common\log.h" />
+    <ClInclude Include="..\src\Common\rosecrypt.hpp" />
+    <ClInclude Include="..\src\Common\sockets.h" />
+    <ClInclude Include="..\src\World_Server\aip\AiActions.h" />
+    <ClInclude Include="..\src\World_Server\aip\AiConditions.h" />
+    <ClInclude Include="..\src\World_Server\aip\Aip.h" />
+    <ClInclude Include="..\src\World_Server\character.h" />
+    <ClInclude Include="..\src\World_Server\chartype.h" />
+    <ClInclude Include="..\src\World_Server\datatypes.h" />
+    <ClInclude Include="..\src\World_Server\datatypes_compat.h" />
+    <ClInclude Include="..\src\World_Server\ltbhandler.h" />
+    <ClInclude Include="..\src\World_Server\party.h" />
+    <ClInclude Include="..\src\World_Server\player.h" />
+    <ClInclude Include="..\src\World_Server\quest\CIntStb.hpp" />
+    <ClInclude Include="..\src\World_Server\quest\CRoseArray.hpp" />
+    <ClInclude Include="..\src\World_Server\quest\CRoseFile.hpp" />
+    <ClInclude Include="..\src\World_Server\quest\CStrStb.hpp" />
+    <ClInclude Include="..\src\World_Server\quest\QuestActions.h" />
+    <ClInclude Include="..\src\World_Server\quest\QuestConditions.h" />
+    <ClInclude Include="..\src\World_Server\quest\QuestTrigger.h" />
+    <ClInclude Include="..\src\World_Server\quest\strhashing.h" />
+    <ClInclude Include="..\src\World_Server\stbhandler.h" />
+    <ClInclude Include="..\src\World_Server\stlhandler.h" />
+    <ClInclude Include="..\src\World_Server\worldmap.h" />
+    <ClInclude Include="..\src\World_Server\WorldMonster.h" />
+    <ClInclude Include="..\src\World_Server\worldserver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\Common\config.cpp" />
+    <ClCompile Include="..\src\Common\database\database.cpp" />
+    <ClCompile Include="..\src\Common\log.cpp" />
+    <ClCompile Include="..\src\Common\rosecrypt.cpp" />
+    <ClCompile Include="..\src\Common\SocketBase.cpp" />
+    <ClCompile Include="..\src\Common\SocketClient.cpp" />
+    <ClCompile Include="..\src\Common\SocketServer.cpp" />
+    <ClCompile Include="..\src\World_Server\aip\AiActions.cpp">
+      <PreprocessToFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</PreprocessToFile>
+    </ClCompile>
+    <ClCompile Include="..\src\World_Server\aip\AiConditions.cpp" />
+    <ClCompile Include="..\src\World_Server\aip\Aip.cpp" />
+    <ClCompile Include="..\src\World_Server\battle.cpp" />
+    <ClCompile Include="..\src\World_Server\Buff.cpp" />
+    <ClCompile Include="..\src\World_Server\character.cpp" />
+    <ClCompile Include="..\src\World_Server\charevent.cpp" />
+    <ClCompile Include="..\src\World_Server\charfunctions.cpp" />
+    <ClCompile Include="..\src\World_Server\charstats.cpp" />
+    <ClCompile Include="..\src\World_Server\clan.cpp" />
+    <ClCompile Include="..\src\World_Server\console.cpp" />
+    <ClCompile Include="..\src\World_Server\extrafunctions.cpp" />
+    <ClCompile Include="..\src\World_Server\gmcmds.cpp" />
+    <ClCompile Include="..\src\World_Server\itemdata.cpp" />
+    <ClCompile Include="..\src\World_Server\ltbhandler.cpp" />
+    <ClCompile Include="..\src\World_Server\main.cpp" />
+    <ClCompile Include="..\src\World_Server\MainProcess.cpp" />
+    <ClCompile Include="..\src\World_Server\mapfunctions.cpp" />
+    <ClCompile Include="..\src\World_Server\Monster.cpp" />
+    <ClCompile Include="..\src\World_Server\MonsterDamage.cpp" />
+    <ClCompile Include="..\src\World_Server\MonsterEvents.cpp" />
+    <ClCompile Include="..\src\World_Server\monsterfunctions.cpp" />
+    <ClCompile Include="..\src\World_Server\MonsterStats.cpp" />
+    <ClCompile Include="..\src\World_Server\Party.cpp" />
+    <ClCompile Include="..\src\World_Server\partyfunctions.cpp" />
+    <ClCompile Include="..\src\World_Server\player.cpp" />
+    <ClCompile Include="..\src\World_Server\playerdata.cpp" />
+    <ClCompile Include="..\src\World_Server\playerfunctions.cpp" />
+    <ClCompile Include="..\src\World_Server\playerquest.cpp" />
+    <ClCompile Include="..\src\World_Server\playerstats.cpp" />
+    <ClCompile Include="..\src\World_Server\quest.cpp" />
+    <ClCompile Include="..\src\World_Server\quest\QuestActions.cpp" />
+    <ClCompile Include="..\src\World_Server\quest\QuestActionsC.cpp" />
+    <ClCompile Include="..\src\World_Server\quest\QuestConditions.cpp" />
+    <ClCompile Include="..\src\World_Server\quest\QuestConditionsC.cpp" />
+    <ClCompile Include="..\src\World_Server\quest\Quests.cpp" />
+    <ClCompile Include="..\src\World_Server\quest\strhashing.cpp" />
+    <ClCompile Include="..\src\World_Server\ServerFunctions.cpp" />
+    <ClCompile Include="..\src\World_Server\Signal.cpp" />
+    <ClCompile Include="..\src\World_Server\startup.cpp" />
+    <ClCompile Include="..\src\World_Server\stbhandler.cpp" />
+    <ClCompile Include="..\src\World_Server\stlhandler.cpp" />
+    <ClCompile Include="..\src\World_Server\worldmap.cpp" />
+    <ClCompile Include="..\src\World_Server\WorldMonster.cpp" />
+    <ClCompile Include="..\src\World_Server\worldpackets.cpp" />
+    <ClCompile Include="..\src\World_Server\Worldprocess.cpp" />
+    <ClCompile Include="..\src\World_Server\worldserver.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

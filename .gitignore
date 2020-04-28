@@ -6,6 +6,7 @@
 *.manifest
 *.pdb
 *.idb
+*.ipch
 
 
 # Precompiled Headers
@@ -34,4 +35,6 @@
 # Logs
 *.log
 *.tlog
+*.enc
+*.VC
 
