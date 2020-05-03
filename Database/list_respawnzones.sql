@@ -1,253 +1,262 @@
-/*
-MySQL Data Transfer
-Source Host: localhost
-Source Database: osrose
-Target Host: localhost
-Target Database: osrose
-Date: 7/18/2008 11:53:56 AM
-*/
-SET FOREIGN_KEY_CHECKS=0;
--- ----------------------------
--- Table structure for list_respawnzones
--- ----------------------------
-CREATE TABLE `list_respawnzones` (
-`id` int(11) NOT NULL auto_increment,
-`map` int(11) NOT NULL,
-`x` float NOT NULL,
-`y` float NOT NULL,
-`radius` float NOT NULL default '10',
-`type` int(11) NOT NULL default '2',
-PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=286 DEFAULT CHARSET=latin1;
--- ----------------------------
--- Records 
--- ----------------------------
-INSERT INTO `list_respawnzones` VALUES (2, 1, 5240.72, 5189.85, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 1, 5210.47, 5136.67, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 2, 5655.32, 5238.22, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (4, 2, 5654.79, 5216.30, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (9, 2, 5334.14, 5177.97, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 2, 5517.67, 5448.76, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 3, 5177.97, 5008.88, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 3, 5184.00, 4999.62, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 4, 5084.54, 5021.58, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 4, 5096.12, 5021.34, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 5, 5155.11, 5105.19, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 5, 5201.83, 5498.40, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 5, 5200.79, 5059.89, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 6, 5155.11, 5105.19, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 6, 5201.83, 5498.40, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 6, 5200.79, 5059.89, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 8, 5525.87, 4546.56, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 8, 5520.16, 4558.11, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 9, 5211.40, 4867.90, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 9, 5200.51, 4725.06, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 11, 5512.24, 5027.03, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 11, 5016.03, 5360.19, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 11, 5380.43, 5427.36, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 11, 5428.77, 4982.24, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 11, 5000.67, 5045.25, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 12, 5512.24, 5027.03, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 12, 5016.03, 5360.19, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 12, 5380.43, 5427.36, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 12, 5428.77, 4982.24, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 12, 5000.67, 5045.25, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 13, 5512.24, 5027.03, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 13, 5016.03, 5360.19, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 13, 5380.43, 5427.36, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 13, 5428.77, 4982.24, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 13, 5000.67, 5045.25, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 15, 5190.00, 5140.00, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 15, 5210.00, 5140.00, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 16, 5190.00, 5140.00, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 16, 5210.00, 5140.00, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 17, 5190.00, 5140.00, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 17, 5210.00, 5140.00, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 18, 5190.00, 5140.00, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 18, 5210.00, 5140.00, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 19, 5196.10, 5182.86, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 19, 5212.27, 5184.06, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 21, 5340.30, 5283.73, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 21, 5102.48, 5063.67, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 21, 5103.90, 5072.72, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 21, 5296.26, 5058.71, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 21, 5397.82, 5510.88, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 21, 5140.36, 5492.47, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 22, 5303.62, 5099.92, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 22, 5080.18, 5331.80, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 22, 5283.51, 5267.41, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 22, 5687.81, 5376.89, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 22, 5752.08, 5108.01, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (6, 22, 5839.76, 5332.16, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (56, 22, 5839.76, 5332.16, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 22, 5804.80, 5190.70, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 23, 5036.32, 5085.89, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 23, 5096.35, 4905.92, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 23, 5348.23, 5061.66, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 23, 5327.19, 5400.28, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 23, 5138.80, 5523.91, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 24, 5527.76, 5246.70, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 24, 5525.30, 5376.16, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 24, 5027.82, 5099.68, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 24, 5526.01, 4944.91, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 25, 5379.49, 5184.52, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 25, 5515.46, 4899.35, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 25, 5490.36, 5359.51, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 25, 5265.90, 5555.69, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 25, 5179.41, 5086.81, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 26, 5283.77, 5161.85, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 26, 5063.09, 5494.25, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 26, 5251.59, 5554.70, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 26, 5443.63, 5293.25, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 26, 5685.06, 5104.05, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 26, 5291.23, 4893.05, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 26, 5053.08, 5034.35, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 27, 5179.07, 5411.13, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 27, 5221.27, 5328.82, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 27, 5623.88, 5187.46, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 27, 5582.24, 5460.38, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 28, 5196.53, 4906.26, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 28, 5527.71, 4812.22, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 28, 5148.43, 5225.29, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 28, 5541.16, 4816.40, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 28, 5570.47, 5174.68, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 29, 5091.54, 5150.00, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 29, 5091.16, 5141.70, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 31, 5520.00, 5455.00, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 31, 5429.84, 5509.55, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 32, 5517.44, 5409.57, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 32, 5253.55, 5416.94, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 33, 5606.58, 5464.56, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 33, 5695.31, 5269.66, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 37, 5098.63, 5233.40, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 37, 5110.04, 5233.01, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 39, 5070.40, 5353.36, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 39, 5063.80, 5343.57, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 40, 5180.85, 5210.49, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 40, 5189.88, 5211.03, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 41, 5062.03, 5201.67, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 41, 5232.10, 5292.51, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 41, 5113.63, 5246.86, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 42, 5311.87, 5150.83, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 42, 5319.54, 5150.52, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 43, 5097.29, 4970.94, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 43, 5098.07, 4978.57, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 43, 5534.98, 5295.78, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 43, 5544.38, 5294.84, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 43, 5055.35, 5159.86, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 44, 5356.59, 5043.46, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 44, 5361.43, 5034.55, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 46, 5191.36, 5345.45, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 46, 5193.69, 5348.16, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 46, 5522.14, 5016.35, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 46, 5523.91, 5018.28, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 47, 5276.26, 5123.54, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 47, 5283.47, 5117.01, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 48, 5276.26, 5123.54, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 48, 5283.47, 5117.01, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 49, 5276.26, 5123.54, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 49, 5283.47, 5117.01, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 50, 5276.26, 5123.54, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 50, 5283.47, 5117.01, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (5, 51, 5357.30, 5013.29, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 51, 5357.50, 5011.43, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 52, 6145.64, 5209.21, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 52, 6151.22, 5202.69, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 53, 5061.76, 5189.57, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 53, 5048.39, 5201.65, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 54, 5060.94, 4432.00, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 54, 5052.83, 4423.34, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 55, 5528.68, 4467.55, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 55, 5523.38, 4458.08, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 56, 5034.71, 4268.82, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 56, 5034.62, 4264.80, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 57, 5538.55, 5174.80, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 57, 5532.65, 5174.79, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 58, 5682.25, 4269.11, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 58, 5682.16, 4258.94, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 59, 5092.00, 5140.01, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 59, 5092.49, 5125.68, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (68, 61, 5435.24, 4569.69, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 61, 5429.73, 4573.14, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 62, 5837.58, 5173.35, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 62, 5850.91, 5166.71, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 63, 6079.18, 5197.36, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 63, 6089.52, 5193.01, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 64, 5038.56, 5311.87, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 64, 5049.29, 5317.46, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 65, 5510.47, 5390.22, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 66, 5997.55, 5255.15, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 66, 6005.04, 5244.78, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 72, 5124.31, 5308.19, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 72, 5116.80, 5308.77, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 73, 5243.53, 5201.21, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 73, 5243.97, 5208.54, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 74, 5168.69, 5249.56, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 74, 5170.47, 5245.72, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 75, 5275.96, 5324.33, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 75, 5283.02, 5330.68, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 76, 5468.91, 4976.84, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 76, 5465.06, 4969.49, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 77, 5073.31, 5244.58, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 77, 5073.25, 5245.41, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 78, 5609.27, 5158.66, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 78, 5614.16, 5154.37, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 78, 5191.06, 5047.64, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 79, 5350.17, 5202.84, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 79, 5356.38, 5205.71, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 79, 5029.43, 5160.54, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 80, 5009.05, 5408.81, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 80, 5251.39, 5152.01, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 80, 5246.55, 5408.78, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 80, 5062.92, 5192.62, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 81, 4946.63, 5298.20, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 90, 5096.51, 5089.15, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 90, 5096.04, 5087.01, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 91, 5096.51, 5089.15, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 91, 5096.04, 5087.01, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 92, 5096.51, 5089.15, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 92, 5096.04, 5087.01, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 93, 5096.51, 5089.15, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 93, 5096.04, 5087.01, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 94, 5096.51, 5089.15, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 94, 5096.04, 5087.01, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 101, 5092.46, 5085.83, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 101, 5101.48, 5085.19, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 102, 5092.46, 5085.83, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 102, 5101.48, 5085.19, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 103, 5092.46, 5085.83, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 103, 5101.48, 5085.19, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 104, 5092.46, 5085.83, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 104, 5101.48, 5085.19, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 105, 5092.46, 5085.83, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 105, 5101.48, 5085.19, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 106, 5092.46, 5085.83, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 106, 5101.48, 5085.19, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 107, 5092.46, 5085.83, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 107, 5101.48, 5085.19, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 108, 5092.46, 5085.83, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 108, 5101.48, 5085.19, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 109, 5092.46, 5085.83, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 109, 5101.48, 5085.19, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 110, 5092.46, 5085.83, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 110, 5101.48, 5085.19, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 111, 5092.46, 5085.83, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 111, 5101.48, 5085.19, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 112, 5092.46, 5085.83, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 112, 5101.48, 5085.19, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 113, 5092.46, 5085.83, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 113, 5101.48, 5085.19, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 114, 5092.46, 5085.83, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 114, 5101.48, 5085.19, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 115, 5092.46, 5085.83, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 115, 5101.48, 5085.19, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 116, 5092.46, 5085.83, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 116, 5101.48, 5085.19, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 117, 5092.46, 5085.83, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 117, 5101.48, 5085.19, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 118, 5092.46, 5085.83, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 118, 5101.48, 5085.19, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 119, 5092.46, 5085.83, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 119, 5101.48, 5085.19, 10, 0);
-INSERT INTO `list_respawnzones` VALUES (0, 120, 5092.46, 5085.83, 10, 1);
-INSERT INTO `list_respawnzones` VALUES (0, 120, 5101.48, 5085.19, 10, 0);
+-- --------------------------------------------------------
+-- Host:                         127.0.0.1
+-- Server version:               10.1.16-MariaDB - mariadb.org binary distribution
+-- Server OS:                    Win32
+-- HeidiSQL Version:             10.1.0.5464
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+-- Dumping structure for table roseza.list_respawnzones
+DROP TABLE IF EXISTS `list_respawnzones`;
+CREATE TABLE IF NOT EXISTS `list_respawnzones` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `map` int(11) NOT NULL,
+  `x` float NOT NULL,
+  `y` float NOT NULL,
+  `radius` float NOT NULL DEFAULT '10',
+  `type` int(11) NOT NULL DEFAULT '2',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=508 DEFAULT CHARSET=latin1;
+
+-- Dumping data for table roseza.list_respawnzones: 229 rows
+/*!40000 ALTER TABLE `list_respawnzones` DISABLE KEYS */;
+INSERT INTO `list_respawnzones` (`id`, `map`, `x`, `y`, `radius`, `type`) VALUES
+	(2, 1, 5240.72, 5189.85, 10, 0),
+	(286, 1, 5210.47, 5136.67, 10, 1),
+	(287, 2, 5655.32, 5238.22, 10, 1),
+	(4, 2, 5654.79, 5216.3, 10, 0),
+	(9, 2, 5334.14, 5177.97, 10, 0),
+	(288, 2, 5517.67, 5448.76, 10, 0),
+	(289, 3, 5177.97, 5008.88, 10, 1),
+	(290, 3, 5184, 4999.62, 10, 0),
+	(291, 4, 5084.54, 5021.58, 10, 1),
+	(292, 4, 5096.12, 5021.34, 10, 0),
+	(293, 5, 5155.11, 5105.19, 10, 1),
+	(294, 5, 5201.83, 5498.4, 10, 0),
+	(295, 5, 5200.79, 5059.89, 10, 0),
+	(296, 6, 5155.11, 5105.19, 10, 1),
+	(297, 6, 5201.83, 5498.4, 10, 0),
+	(298, 6, 5200.79, 5059.89, 10, 0),
+	(299, 8, 5525.87, 4546.56, 10, 1),
+	(300, 8, 5520.16, 4558.11, 10, 0),
+	(301, 9, 5211.4, 4867.9, 10, 1),
+	(302, 9, 5200.51, 4725.06, 10, 0),
+	(303, 11, 5512.24, 5027.03, 10, 1),
+	(304, 11, 5016.03, 5360.19, 10, 0),
+	(305, 11, 5380.43, 5427.36, 10, 0),
+	(306, 11, 5428.77, 4982.24, 10, 0),
+	(307, 11, 5000.67, 5045.25, 10, 0),
+	(308, 12, 5512.24, 5027.03, 10, 1),
+	(309, 12, 5016.03, 5360.19, 10, 0),
+	(310, 12, 5380.43, 5427.36, 10, 0),
+	(311, 12, 5428.77, 4982.24, 10, 0),
+	(312, 12, 5000.67, 5045.25, 10, 0),
+	(313, 13, 5512.24, 5027.03, 10, 1),
+	(314, 13, 5016.03, 5360.19, 10, 0),
+	(315, 13, 5380.43, 5427.36, 10, 0),
+	(316, 13, 5428.77, 4982.24, 10, 0),
+	(317, 13, 5000.67, 5045.25, 10, 0),
+	(318, 15, 5190, 5140, 10, 1),
+	(319, 15, 5210, 5140, 10, 0),
+	(320, 16, 5190, 5140, 10, 1),
+	(321, 16, 5210, 5140, 10, 0),
+	(322, 17, 5190, 5140, 10, 1),
+	(323, 17, 5210, 5140, 10, 0),
+	(324, 18, 5190, 5140, 10, 1),
+	(325, 18, 5210, 5140, 10, 0),
+	(326, 19, 5196.1, 5182.86, 10, 1),
+	(327, 19, 5212.27, 5184.06, 10, 0),
+	(328, 21, 5340.3, 5283.73, 10, 0),
+	(329, 21, 5102.48, 5063.67, 10, 1),
+	(330, 21, 5103.9, 5072.72, 10, 0),
+	(331, 21, 5296.26, 5058.71, 10, 0),
+	(332, 21, 5397.82, 5510.88, 10, 0),
+	(333, 21, 5140.36, 5492.47, 10, 0),
+	(334, 22, 5303.62, 5099.92, 10, 0),
+	(335, 22, 5080.18, 5331.8, 10, 0),
+	(336, 22, 5283.51, 5267.41, 10, 0),
+	(337, 22, 5687.81, 5376.89, 10, 0),
+	(338, 22, 5752.08, 5108.01, 10, 0),
+	(6, 22, 5839.76, 5332.16, 10, 1),
+	(56, 22, 5839.76, 5332.16, 10, 1),
+	(339, 22, 5804.8, 5190.7, 10, 0),
+	(340, 23, 5036.32, 5085.89, 10, 0),
+	(341, 23, 5096.35, 4905.92, 10, 1),
+	(342, 23, 5348.23, 5061.66, 10, 0),
+	(343, 23, 5327.19, 5400.28, 10, 0),
+	(344, 23, 5138.8, 5523.91, 10, 0),
+	(345, 24, 5527.76, 5246.7, 10, 1),
+	(346, 24, 5525.3, 5376.16, 10, 0),
+	(347, 24, 5027.82, 5099.68, 10, 0),
+	(348, 24, 5526.01, 4944.91, 10, 0),
+	(349, 25, 5379.49, 5184.52, 10, 1),
+	(350, 25, 5515.46, 4899.35, 10, 0),
+	(351, 25, 5490.36, 5359.51, 10, 0),
+	(352, 25, 5265.9, 5555.69, 10, 0),
+	(353, 25, 5179.41, 5086.81, 10, 0),
+	(354, 26, 5283.77, 5161.85, 10, 0),
+	(355, 26, 5063.09, 5494.25, 10, 1),
+	(356, 26, 5251.59, 5554.7, 10, 0),
+	(357, 26, 5443.63, 5293.25, 10, 0),
+	(358, 26, 5685.06, 5104.05, 10, 0),
+	(359, 26, 5291.23, 4893.05, 10, 0),
+	(360, 26, 5053.08, 5034.35, 10, 0),
+	(361, 27, 5179.07, 5411.13, 10, 1),
+	(362, 27, 5221.27, 5328.82, 10, 0),
+	(363, 27, 5623.88, 5187.46, 10, 0),
+	(364, 27, 5582.24, 5460.38, 10, 0),
+	(365, 28, 5196.53, 4906.26, 10, 0),
+	(366, 28, 5527.71, 4812.22, 10, 0),
+	(367, 28, 5148.43, 5225.29, 10, 0),
+	(368, 28, 5541.16, 4816.4, 10, 1),
+	(369, 28, 5570.47, 5174.68, 10, 0),
+	(370, 29, 5091.54, 5150, 10, 1),
+	(371, 29, 5091.16, 5141.7, 10, 0),
+	(372, 31, 5520, 5455, 10, 1),
+	(373, 31, 5429.84, 5509.55, 10, 0),
+	(374, 32, 5517.44, 5409.57, 10, 1),
+	(375, 32, 5253.55, 5416.94, 10, 0),
+	(376, 33, 5606.58, 5464.56, 10, 1),
+	(377, 33, 5695.31, 5269.66, 10, 0),
+	(378, 37, 5098.63, 5233.4, 10, 1),
+	(379, 37, 5110.04, 5233.01, 10, 0),
+	(380, 39, 5070.4, 5353.36, 10, 1),
+	(381, 39, 5063.8, 5343.57, 10, 0),
+	(382, 40, 5180.85, 5210.49, 10, 1),
+	(383, 40, 5189.88, 5211.03, 10, 0),
+	(384, 41, 5062.03, 5201.67, 10, 1),
+	(385, 41, 5232.1, 5292.51, 10, 0),
+	(386, 41, 5113.63, 5246.86, 10, 0),
+	(387, 42, 5311.87, 5150.83, 10, 1),
+	(388, 42, 5319.54, 5150.52, 10, 0),
+	(389, 43, 5097.29, 4970.94, 10, 1),
+	(390, 43, 5098.07, 4978.57, 10, 0),
+	(391, 43, 5534.98, 5295.78, 10, 1),
+	(392, 43, 5544.38, 5294.84, 10, 0),
+	(393, 43, 5055.35, 5159.86, 10, 0),
+	(394, 44, 5356.59, 5043.46, 10, 1),
+	(395, 44, 5361.43, 5034.55, 10, 0),
+	(396, 46, 5191.36, 5345.45, 10, 1),
+	(397, 46, 5193.69, 5348.16, 10, 0),
+	(398, 46, 5522.14, 5016.35, 10, 1),
+	(399, 46, 5523.91, 5018.28, 10, 0),
+	(400, 47, 5276.26, 5123.54, 10, 1),
+	(401, 47, 5283.47, 5117.01, 10, 0),
+	(402, 48, 5276.26, 5123.54, 10, 1),
+	(403, 48, 5283.47, 5117.01, 10, 0),
+	(404, 49, 5276.26, 5123.54, 10, 1),
+	(405, 49, 5283.47, 5117.01, 10, 0),
+	(406, 50, 5276.26, 5123.54, 10, 1),
+	(407, 50, 5283.47, 5117.01, 10, 0),
+	(5, 51, 5357.3, 5013.29, 10, 0),
+	(408, 51, 5357.5, 5011.43, 10, 1),
+	(409, 52, 6145.64, 5209.21, 10, 1),
+	(410, 52, 6151.22, 5202.69, 10, 0),
+	(411, 53, 5061.76, 5189.57, 10, 1),
+	(412, 53, 5048.39, 5201.65, 10, 0),
+	(413, 54, 5060.94, 4432, 10, 1),
+	(414, 54, 5052.83, 4423.34, 10, 0),
+	(415, 55, 5528.68, 4467.55, 10, 1),
+	(416, 55, 5523.38, 4458.08, 10, 0),
+	(417, 56, 5034.71, 4268.82, 10, 0),
+	(418, 56, 5034.62, 4264.8, 10, 1),
+	(419, 57, 5538.55, 5174.8, 10, 0),
+	(420, 57, 5532.65, 5174.79, 10, 1),
+	(421, 58, 5682.25, 4269.11, 10, 1),
+	(422, 58, 5682.16, 4258.94, 10, 0),
+	(423, 59, 5092, 5140.01, 10, 1),
+	(424, 59, 5092.49, 5125.68, 10, 0),
+	(68, 61, 5435.24, 4569.69, 10, 1),
+	(425, 61, 5429.73, 4573.14, 10, 0),
+	(426, 62, 5837.58, 5173.35, 10, 1),
+	(427, 62, 5850.91, 5166.71, 10, 0),
+	(428, 63, 6079.18, 5197.36, 10, 1),
+	(429, 63, 6089.52, 5193.01, 10, 0),
+	(430, 64, 5038.56, 5311.87, 10, 1),
+	(431, 64, 5049.29, 5317.46, 10, 0),
+	(432, 65, 5510.47, 5390.22, 10, 1),
+	(433, 66, 5997.55, 5255.15, 10, 1),
+	(434, 66, 6005.04, 5244.78, 10, 0),
+	(435, 72, 5124.31, 5308.19, 10, 1),
+	(436, 72, 5116.8, 5308.77, 10, 0),
+	(437, 73, 5243.53, 5201.21, 10, 1),
+	(438, 73, 5243.97, 5208.54, 10, 0),
+	(439, 74, 5168.69, 5249.56, 10, 1),
+	(440, 74, 5170.47, 5245.72, 10, 0),
+	(441, 75, 5275.96, 5324.33, 10, 1),
+	(442, 75, 5283.02, 5330.68, 10, 0),
+	(443, 76, 5468.91, 4976.84, 10, 1),
+	(444, 76, 5465.06, 4969.49, 10, 0),
+	(445, 77, 5073.31, 5244.58, 10, 1),
+	(446, 77, 5073.25, 5245.41, 10, 0),
+	(447, 78, 5609.27, 5158.66, 10, 1),
+	(448, 78, 5614.16, 5154.37, 10, 0),
+	(449, 78, 5191.06, 5047.64, 10, 0),
+	(450, 79, 5350.17, 5202.84, 10, 1),
+	(451, 79, 5356.38, 5205.71, 10, 0),
+	(452, 79, 5029.43, 5160.54, 10, 0),
+	(453, 80, 5009.05, 5408.81, 10, 0),
+	(454, 80, 5251.39, 5152.01, 10, 0),
+	(455, 80, 5246.55, 5408.78, 10, 1),
+	(456, 80, 5062.92, 5192.62, 10, 0),
+	(457, 81, 4946.63, 5298.2, 10, 1),
+	(458, 90, 5096.51, 5089.15, 10, 1),
+	(459, 90, 5096.04, 5087.01, 10, 0),
+	(460, 91, 5096.51, 5089.15, 10, 1),
+	(461, 91, 5096.04, 5087.01, 10, 0),
+	(462, 92, 5096.51, 5089.15, 10, 1),
+	(463, 92, 5096.04, 5087.01, 10, 0),
+	(464, 93, 5096.51, 5089.15, 10, 1),
+	(465, 93, 5096.04, 5087.01, 10, 0),
+	(466, 94, 5096.51, 5089.15, 10, 1),
+	(467, 94, 5096.04, 5087.01, 10, 0),
+	(468, 101, 5092.46, 5085.83, 10, 1),
+	(469, 101, 5101.48, 5085.19, 10, 0),
+	(470, 102, 5092.46, 5085.83, 10, 1),
+	(471, 102, 5101.48, 5085.19, 10, 0),
+	(472, 103, 5092.46, 5085.83, 10, 1),
+	(473, 103, 5101.48, 5085.19, 10, 0),
+	(474, 104, 5092.46, 5085.83, 10, 1),
+	(475, 104, 5101.48, 5085.19, 10, 0),
+	(476, 105, 5092.46, 5085.83, 10, 1),
+	(477, 105, 5101.48, 5085.19, 10, 0),
+	(478, 106, 5092.46, 5085.83, 10, 1),
+	(479, 106, 5101.48, 5085.19, 10, 0),
+	(480, 107, 5092.46, 5085.83, 10, 1),
+	(481, 107, 5101.48, 5085.19, 10, 0),
+	(482, 108, 5092.46, 5085.83, 10, 1),
+	(483, 108, 5101.48, 5085.19, 10, 0),
+	(484, 109, 5092.46, 5085.83, 10, 1),
+	(485, 109, 5101.48, 5085.19, 10, 0),
+	(486, 110, 5092.46, 5085.83, 10, 1),
+	(487, 110, 5101.48, 5085.19, 10, 0),
+	(488, 111, 5092.46, 5085.83, 10, 1),
+	(489, 111, 5101.48, 5085.19, 10, 0),
+	(490, 112, 5092.46, 5085.83, 10, 1),
+	(491, 112, 5101.48, 5085.19, 10, 0),
+	(492, 113, 5092.46, 5085.83, 10, 1),
+	(493, 113, 5101.48, 5085.19, 10, 0),
+	(494, 114, 5092.46, 5085.83, 10, 1),
+	(495, 114, 5101.48, 5085.19, 10, 0),
+	(496, 115, 5092.46, 5085.83, 10, 1),
+	(497, 115, 5101.48, 5085.19, 10, 0),
+	(498, 116, 5092.46, 5085.83, 10, 1),
+	(499, 116, 5101.48, 5085.19, 10, 0),
+	(500, 117, 5092.46, 5085.83, 10, 1),
+	(501, 117, 5101.48, 5085.19, 10, 0),
+	(502, 118, 5092.46, 5085.83, 10, 1),
+	(503, 118, 5101.48, 5085.19, 10, 0),
+	(504, 119, 5092.46, 5085.83, 10, 1),
+	(505, 119, 5101.48, 5085.19, 10, 0),
+	(506, 120, 5092.46, 5085.83, 10, 1),
+	(507, 120, 5101.48, 5085.19, 10, 0);
+/*!40000 ALTER TABLE `list_respawnzones` ENABLE KEYS */;
+
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
