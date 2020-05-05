@@ -1242,7 +1242,8 @@ bool CWorldServer::pakGMCommand( CPlayer* thisclient, CPacket* P )
     {
         if(Config.Command_go > thisclient->Session->accesslevel)
 	       return true;
-        if ((tmp = strtok(NULL, " ")) == NULL) tmp = 0; int loc=atoi(tmp);
+        if ((tmp = strtok(NULL, " ")) == NULL) tmp = 0; 
+			int loc = atoi(tmp);
         if(Config.Command_Go > thisclient->Session->accesslevel)
             return true;
         int x = 0;
@@ -1496,6 +1497,7 @@ bool CWorldServer::pakGMCommand( CPlayer* thisclient, CPacket* P )
 //            SendPM(thisclient, "13 = Union Wars-Atk");
 //            SendPM(thisclient, "14 = Union Wars-Def");
             SendPM(thisclient, "Example; /go 3");
+			return true;
         }
         if ( thisclient->Stats->HP < (thisclient->Stats->MaxHP / 2) || thisclient->Stats->HP < 1 || thisclient->Session->inGame == false )
         {
