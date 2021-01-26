@@ -24,12 +24,12 @@
 bool CMonster::OnBeAttacked( CCharacter* Enemy )
 {
     Battle->hitby = Enemy->clientid;
-
+	/*		//PY: This is all bullshit. That stuff is entirely handled by AIP
     if(!IsOnBattle( ))
     {
 
         //LMA: yeah hurt me (used for Santa Rudolph).
-        if(thisnpc->helpless==1)
+        if(thisnpc->helpless == 1)
         {
             StartAction( Enemy, STAY_STILL_ATTACK, 0 );
             return true;
@@ -47,7 +47,7 @@ bool CMonster::OnBeAttacked( CCharacter* Enemy )
         }
 
     }
-
+	*/
     return true;
 }
 
@@ -285,15 +285,15 @@ void CMonster::DoAi(int ainumberorg,char type)
     //LMA: reseting some timers.
     if (type==0||type==1||type==4||type==5)
     {
-        nextAi_attacked=clock();
+        nextAi_attacked = clock();
     }
 
 
     //LMA: does the monster have a special AIP?
-    int ainumber=ainumberorg;
-    if (sp_aip!=0)
+    int ainumber = ainumberorg;
+    if (sp_aip != 0)
     {
-        ainumber=sp_aip;
+        ainumber = sp_aip;
         //Log(MSG_INFO,"AIP overwritten from %i to %i for monster %i (cid %i)",ainumberorg,ainumber,montype,clientid);
     }
 

@@ -82,6 +82,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)\3rd_party\pthread\include;$(SolutionDir)\3rd_party\mysql\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBSC;_TIMESPEC_DEFINED;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)\3rd_party\pthread\lib\x86;$(SolutionDir)\3rd_party\mysql\lib;$(SolutionDir)\VS_Projects\bin\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>

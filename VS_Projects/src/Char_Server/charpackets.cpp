@@ -380,13 +380,14 @@ bool CCharServer::pakCreateChar( CCharClient* thisclient, CPacket* P )
 		DB->QFree( );
 		return true;
 	}
+
 	DB->QFree( );
 
 	if(!DB->QExecute("INSERT INTO characters (account_name, char_name, face, hairStyle, sex) VALUES('%s','%s',%i,%i,%i)", thisclient->username, newname.c_str(), face, hairstyle, sex))
 	   return false;
 	unsigned int mid = (unsigned)mysql_insert_id( DB->Mysql );
     MYSQL_ROW row;
-	if(!DB->QExecute("INSERT INTO items VALUES(%i,29,3,0,40,100,3,1,0,0,0,0,0)", mid))
+	/*if(!DB->QExecute("INSERT INTO items VALUES(%i,29,3,0,40,100,3,1,0,0,0,0,0)", mid))
 		return false;
 	if(!DB->QExecute("INSERT INTO items VALUES(%i,29,5,0,40,100,6,1,0,0,0,0,0)", mid))
 		return false;
@@ -406,7 +407,21 @@ bool CCharServer::pakCreateChar( CCharClient* thisclient, CPacket* P )
 
 	BEGINPACKET( pak, 0x713 );
 	ADDWORD    ( pak,  0 );
-	thisclient->SendPacket( &pak );
+	thisclient->SendPacket( &pak );*/
+
+	/// Set the Default Items: (we use a stored procedure for that;)
+	if (DB->QExecute ("CALL SetDefaultItems(%i, %i)", sex, mid)) {
+		BEGINPACKET (pak, 0x713);
+		ADDWORD (pak, 0);							// Status okay!
+		thisclient->SendPacket (&pak);
+	}
+	else {
+		BEGINPACKET (pak, 0x713);
+		ADDWORD (pak, 1);
+		thisclient->SendPacket (&pak);
+
+		return false;
+	}
 
 	return true;
 }

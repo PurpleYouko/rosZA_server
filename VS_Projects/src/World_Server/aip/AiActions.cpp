@@ -698,52 +698,24 @@ AIACT(015)
 {
     //Run and attack "m_pDestCHAR" Blah?
     LogDebug( "AIACT(015)");
-    CMonster* monster = reinterpret_cast<CMonster*>(entity);
-    if(monster->thisnpc->aggresive == 0)
-    {
-        LogDebug( "AIACT(015) returned false as monster has no aggression");
-        return AI_FAILURE; //monster has no agression value so cannot attack a player
-    }
+    
+	CMonster* monster = reinterpret_cast<CMonster*>(entity);
+	monster->thisnpc->stance = 1;
+	monster->SetStats();
 
-    //LMA: Bad idea.
-    //-> it's causing zombie monsters.
-    //if a monster is in battle mode and player skills it, it goes into "is attacked" mode but has already the player as target
-    //since he was in battle mode. So the refresh isn't done client side...
-    /*if(monster->IsOnBattle())
-    {
-        //already in battle so we don't want it switching all the time. maybe 75% of the time it will do nothing?
-        int myrand=GServer->RandNumber(0,100);
-        if(myrand > 25)
-        {
-            LogDebug( "AIACT(015) returned false as we got a really bad random number %i",myrand);
-            return AI_FAILURE; //denied!!!
-        }
-
-        if(monster->Battle->hitby == monster->Battle->target)
-        {
-            LogDebug( "AIACT(015) returned false as monster is already in combat with this player %i",monster->Battle->target);
-            return AI_FAILURE; //no need to initiate combat. I am already fighting this player
-        }
-    }*/
-
-    // otherwise change target to the person who just hit me
-    monster->thisnpc->stance = 1;
-    monster->SetStats();
-    monster->Battle->target = monster->Battle->hitby;
-    CCharacter* target = entity->GetCharTarget( );
-    if(target == NULL)
-    {
-        LogDebug( "I seem to have lost my target so I can't attack any more");
-        return AI_FAILURE;
-    }
-    LogDebug( "Starting normal attack against opponent %i",target->clientid);
-    monster->StartAction( target, NORMAL_ATTACK, 0 );
-
-	if(entity->Position->Map==8)
+    // change target to the person who just hit me
+	if (monster->Battle->target != monster->Battle->hitby)
 	{
-	    Log(MSG_INFO,"AIACT(015) monster retaliates");
+		CCharacter* target = entity->GetCharTarget( );
+		if(target == NULL)
+		{
+			LogDebug( "I seem to have lost my target so I can't attack any more");
+			return AI_FAILURE;
+		}
+		LogDebug( "Starting normal attack against opponent %i",target->clientid);
+		monster->StartAction( target, NORMAL_ATTACK, 0 );
+		monster->Battle->target = monster->Battle->hitby;
 	}
-
 
     return AI_SUCCESS;
 }

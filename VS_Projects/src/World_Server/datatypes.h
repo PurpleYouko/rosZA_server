@@ -456,6 +456,7 @@ struct CEquip
     UINT STLPrefix;
     UINT breakid;   //LMA: used for breakid.
     UINT acc; //Weapon Accutacy
+	UINT rare_type;
 };
 
 // Jem Data

@@ -2406,6 +2406,8 @@ bool CWorldServer::LoadEquip( )
                 newequip->breakid=STB_ITEM[j].rows[i][47];
             }
 
+			newequip->rare_type = STB_ITEM[j].rows[i][50];
+
             if(newequip->equiptype==9)
             {
                 newequip->BlockRate=STB_ITEM[j].rows[i][30];
@@ -2414,7 +2416,7 @@ bool CWorldServer::LoadEquip( )
             }
 
             //LMA: raretype not handled !!
-            //newequip->raretype = STB_ITEM[j].rows[i][47];
+            //newequip->raretype = STB_ITEM[j].rows[i][50];
             //EquipList[newequip->equiptype].Data.push_back( newequip );
             EquipList[newequip->equiptype].Index[newequip->id] = newequip; // Index to read more quickly the data
         }

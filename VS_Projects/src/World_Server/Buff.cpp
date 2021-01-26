@@ -1103,9 +1103,9 @@ unsigned int CWorldServer::BuildBuffs( CCharacter* character )
     if(character->Status->MP_down != 0xff)//A_MP:
         buff1 += 0;
     if(character->Status->Poisoned != 0xff)//A_POISON
-        buff1+= POISONED;
+        buff1 += POISONED;
     if(character->Status->Flamed != 0xff)//A_FLAME
-        buff1+= FLAMED;
+        buff1 += FLAMED;
     if(character->Status->Attack_down != 0xff) // A_ATTACK:
         buff2 += ATTACK_DOWN;
     if(character->Status->Haste_down != 0xff)//A_HASTE:

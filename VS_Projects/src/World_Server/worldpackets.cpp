@@ -7839,9 +7839,14 @@ bool CWorldServer::pakRepairItem( CPlayer* thisclient, CPacket* P,int packet_typ
             if (UseList.Index[thisclient->items[slot_tool].itemnum]->quality<=50)
             {
                 //standard quality, so durability goes away...
-                thisclient->items[slot].durability-=1;
-                if(thisclient->items[slot].durability<=0)
-                    thisclient->items[slot].durability=1;
+				UINT Raretype = EquipList[thisclient->items[slot].itemtype].Index[thisclient->items[slot].itemnum]->rare_type;
+
+				if (Raretype < 11)
+				{ 
+					thisclient->items[slot].durability-=1;
+					if(thisclient->items[slot].durability<=0)
+						thisclient->items[slot].durability=1;
+				}
             }
 
         }

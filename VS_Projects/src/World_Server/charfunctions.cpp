@@ -77,9 +77,9 @@ void CCharacter::StartAction( CCharacter* Target, BYTE action, UINT skillid, boo
     BEGINPACKET( pak, 0 );
     if (restart)
     {
-       Target=GetCharTarget( );
-       action=Battle->atktype;
-       skillid=Battle->skillid;
+       Target = GetCharTarget( );
+       action = Battle->atktype;
+       skillid = Battle->skillid;
     }
 
     //Drakia: If the target is NULL, we should only do something that doesn't require a target.
@@ -333,9 +333,10 @@ bool CCharacter::CanAttack( ) // updated by Core
         }*/
         return false;
     }
+	
 
-     clock_t etime = clock() - Battle->lastAtkTime;
-    //if( etime < CLOCKS_PER_SEC * 100 / Stats->Attack_Speed ) return false;   for the time being let's just let it be unsynced to avoid disbalanced
+    clock_t etime = clock() - Battle->lastAtkTime;
+    if( etime < CLOCKS_PER_SEC * 100 / Stats->Attack_Speed ) return false;   
     int weapontype = IsPlayer()?getWeaponType():0;
     //the fix: not much but it works ;)
     if (weapontype == 212)
@@ -356,19 +357,6 @@ bool CCharacter::CanAttack( ) // updated by Core
     {
         if( (etime < CLOCKS_PER_SEC * ((GServer->ATTK_SPEED_MODIF*4/3) / (Stats->Attack_Speed * (1 +(Stats->Attack_Speed_Percent / 100))))) || Status->Stun != 0xff )
         {
-            /*
-            //LMA: logs
-            if(Position->Map==8)
-            {
-                Log(MSG_INFO,"CanAttack false weapontype %i stun %i etime %u ATTK_SPEED_MODIF %u aspeed %u",weapontype,Status->Stun,etime,GServer->ATTK_SPEED_MODIF,Stats->Attack_Speed);
-            }
-            //end of logs.
-
-            if(IsPlayer())
-            {
-                CPlayer* thisclient = GServer->GetClientByID(clientid);
-                Log(MSG_HACK, "1 %s AS not right, AS: %i and ASP: %f Time: %i : %i", thisclient->CharInfo->charname,Stats->Attack_Speed,Stats->Attack_Speed_Percent, etime,(CLOCKS_PER_SEC * (Stats->Attack_Speed / (Stats->Attack_Speed * (1 +(Stats->Attack_Speed_Percent / 100))))));
-            }*/
             return false;
         }
     }
@@ -376,19 +364,6 @@ bool CCharacter::CanAttack( ) // updated by Core
     {
         if( (etime < CLOCKS_PER_SEC * (Stats->Attack_Speed / (Stats->Attack_Speed * (1 +(Stats->Attack_Speed_Percent / 100))))) || Status->Stun != 0xff )
         {
-            /*
-            //LMA: logs
-            if(Position->Map==8)
-            {
-                Log(MSG_INFO,"CanAttack false weapontype %i stun %i etime %u ATTK_SPEED_MODIF %u aspeed %u",weapontype,Status->Stun,etime,GServer->ATTK_SPEED_MODIF,Stats->Attack_Speed);
-            }
-            //end of logs.
-
-            //if(IsPlayer())
-            {
-                CPlayer* thisclient = GServer->GetClientByID(clientid);
-                Log(MSG_HACK, "1 %s AS not right, AS: %i and ASP: %f Time: %i : %i", thisclient->CharInfo->charname,Stats->Attack_Speed,Stats->Attack_Speed_Percent, etime,(CLOCKS_PER_SEC * (Stats->Attack_Speed / (Stats->Attack_Speed * (1 +(Stats->Attack_Speed_Percent / 100))))));
-            }*/
             return false;
         }
     }

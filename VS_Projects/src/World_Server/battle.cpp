@@ -29,9 +29,10 @@ void CCharacter::DoAttack( )
      */
 
     //osptest begin
+	CCharacter* Enemy = GetCharTarget( );
     if(IsSummon())
     {
-        CCharacter* Enemy = GetCharTarget( );
+        
         if(Enemy == NULL && Battle->atktype != SKILL_AOE && Battle->atktype != BUFF_AOE)
         {
             //LogDebug("No Enemy found");
@@ -48,12 +49,18 @@ void CCharacter::DoAttack( )
     }
     //osptest end
 
-    //LMA: If we're dead, why are we still fighting?
+    //If we're dead, why are we still fighting?
     if(IsDead())
     {
         ClearBattle(Battle);
         return;
     }
+	// Likewise if the Enemy is dead there is no point continuing to pound him
+	if (Enemy->IsDead ()) {
+		ClearBattle (Battle);
+		return;
+	}
+
     if(IsMonster())  //PY Make sure TD monsters don't attack
     {
         CMonster* monster = GServer->GetMonsterByID(clientid, Position->Map);
@@ -67,69 +74,26 @@ void CCharacter::DoAttack( )
         case NORMAL_ATTACK://normal attack
         {
             CCharacter* Enemy = GetCharTarget( );
-            if(Enemy==NULL)
+            if(Enemy == NULL)
             {
                 ClearBattle( Battle );
                 return;
             }
 
-            //osptest
             if(Enemy == this)
             {
                 //Log(MSG_INFO,"WTF?? I AM trying to attack myself");
                 ClearBattle( Battle );
             }
-            //osptest end
-
-            //LMA: Some logs.
-            /*
-            if(map->id==8)
-            {
-                bool is_ok=false;
-                bool is_reached=false;
-                bool can_attack=false;
-
-                float distance = GServer->distance( Position->current, Enemy->Position->current );
-                is_reached=IsTargetReached( Enemy );
-                can_attack=CanAttack( );
-
-                if(is_reached&&can_attack)
-                    is_ok=true;
-
-                if(IsMonster())
-                {
-                    Log(MSG_INFO,"monster has reached? %i (%.2f/%.2f), canattack? %i, will attack? %i",is_reached,distance,Stats->Attack_Distance,can_attack,is_ok);
-
-                    if (is_ok)
-                        Log(MSG_INFO,"NORMAL_ATTACK, monster %i has reached %i (%.2f<=%.2f)",clientid,Enemy->clientid,distance,Stats->Attack_Distance);
-                    else
-                        Log(MSG_INFO,"NORMAL_ATTACK, monster %i hasn't reached? %i (%.2f>%.2f)",clientid,Enemy->clientid,distance,Stats->Attack_Distance);
-                }
-                else
-                {
-                    Log(MSG_INFO,"player has reached? %i (%.2f/%.2f), canattack? %i, will attack? %i",is_reached,distance,Stats->Attack_Distance,can_attack,is_ok);
-
-                    if (is_ok)
-                        Log(MSG_INFO,"NORMAL_ATTACK, player %i has reached %i (%.2f<=%.2f)",clientid,Enemy->clientid,distance,Stats->Attack_Distance);
-                    else
-                        Log(MSG_INFO,"NORMAL_ATTACK, player %i hasn't reached? %i (%.2f>%.2f)",clientid,Enemy->clientid,distance,Stats->Attack_Distance);
-                }
-
-            }
-            */
-            //End of logs.
-
 
             if(IsTargetReached( Enemy ) && CanAttack( ))
             {
                 if(GServer->ServerDebug)
                 {
-                    if(IsMonster())
-                    {
+                    if(IsMonster()){
                         Log(MSG_INFO,"monster Doing a normal attack");
                     }
-                    else
-                    {
+                    else {
                         Log(MSG_INFO,"player Doing a normal attack");
                     }
                 }
@@ -138,62 +102,22 @@ void CCharacter::DoAttack( )
                 //CSkills* skill = GServer->GetSkillByID( 1117 );     //permafrost chill Mage spell just for giggles. Should do shit loads of damage
                 //SkillAttack( Enemy, skill );
 
-                if (Enemy->IsMonster()) // do monster AI script when monster is attacked.
+                if (Enemy->IsMonster()) // do monster AI script when monster is attacked. NO TIMER here
                 {
                     CMonster* monster = GServer->GetMonsterByID(Enemy->clientid, Enemy->Position->Map);
 
-                    if(monster!=NULL)
+                    if(monster != NULL)
                     {
                         if(!monster->IsDead())
                         {
-                            /*Log(MSG_INFO,"Monster %i is attacked, doing his AI 3, HP: %I64i",monster->clientid,monster->Stats->HP);
-                            monster->DoAi(monster->thisnpc->AI, 3);*/
-
-                            //LMA: Doing is_attacked from time to time, not at each attack...
-                            if(0<=GServer->round((clock( ) - monster->nextAi_attacked)))
-                            {
-                                monster->nextAi_attacked=clock();
-                                clock_t temp=monster->nextAi_attacked;
-                                if(GServer->ServerDebug)
-                                    Log(MSG_INFO,"Monster %i is attacked, doing his AI 3, HP: %I64i",monster->clientid,monster->Stats->HP);
-                                if(!monster->TD) //PY no AI stuff for TD monsters
-                                    monster->DoAi(monster->thisnpc->AI, 3);
-
-                                if (temp==monster->nextAi_attacked)
-                                {
-                                    //LMA: AI Timer by default, some AIP can change this.
-                                    monster->nextAi_attacked+=monster->thisnpc->AiTimer;
-                                }
-
-                                //Log(MSG_INFO,"Clock is %u, next is_attacked at %u, so in %u",clock(),monster->thisnpc->AiTimer,monster->thisnpc->AiTimer-clock());
-                                if(GServer->ServerDebug)
-                                    Log(MSG_INFO,"Clock is %u, next is_attacked at %u, so in %u",clock(),monster->nextAi_attacked,monster->nextAi_attacked-clock());
-
-                            }
-
-                        }
-
+                            if(GServer->ServerDebug)
+                                Log(MSG_INFO,"Monster %i is attacked, doing his AI 3, HP: %I64i",monster->clientid,monster->Stats->HP);
+                            if(!monster->TD) //PY no AI stuff for TD monsters
+                                monster->DoAi(monster->thisnpc->AI, 3);
+						}
                     }
-
                 }
-
             }
-            else
-            {
-
-                /*if(IsPlayer())
-                {
-                    if(!IsTargetReached( Enemy ))
-                        Log(MSG_INFO,"Player %i hasn't reached his enemy (%i) yet (%.2f,%.2f) (%.2f,%.2f)",this->clientid,this->Battle->atktarget,this->Position->current.x,this->Position->current.y,this->Position->destiny.x,this->Position->destiny.y);
-                }
-                else
-                {
-                    if(!IsTargetReached( Enemy ))
-                        Log(MSG_INFO,"Monster %i hasn't reached his enemy (%i) yet (%.2f,%.2f) (%.2f,%.2f)",this->clientid,this->Battle->atktarget,this->Position->current.x,this->Position->current.y,this->Position->destiny.x,this->Position->destiny.y);
-                }*/
-
-            }
-
         }
         break;
         case SKILL_ATTACK://skill attack
@@ -637,7 +561,7 @@ void CCharacter::NormalAttack( CCharacter* Enemy )
     {
         if( Stats->ExtraDamage_add !=0 )
         {
-            long int hitsave=hitpower;
+            long int hitsave = hitpower;
             hitpower += ((hitpower * Stats->ExtraDamage_add) / 100);
             if(GServer->ServerDebug)
                 Log(MSG_INFO,"ExtraDmg Normal atk: before %i, after %i (ED: %i)",hitsave,hitpower,Stats->ExtraDamage_add);
@@ -693,6 +617,9 @@ void CCharacter::NormalAttack( CCharacter* Enemy )
     }
 
     Enemy->Stats->HP -=  (long long) hitpower;
+	if (hitpower > 0) {
+		Enemy->Battle->hitby = clientid; //Enemy was just hit so make sure that we set up the hitby record
+	}
 
     if(GServer->ServerDebug)
     {
@@ -1870,6 +1797,9 @@ void CCharacter::UseAtkSkill( CCharacter* Enemy, CSkills* skill, bool deBuff )
     }
 
     Enemy->Stats->HP -=  (long long) skillpower;
+	if (hitpower > 0) {
+		Enemy->Battle->hitby = clientid; //Enemy was just hit so make sure that we set up the hitby record
+	}
     if(GServer->ServerDebug)
         Log(MSG_INFO,"Atk Skill damage %li, Enemy HP after %li",skillpower,Enemy->Stats->HP);
 

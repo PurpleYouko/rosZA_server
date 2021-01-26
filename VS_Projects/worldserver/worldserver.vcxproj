@@ -89,6 +89,7 @@
       <PreprocessToFile>false</PreprocessToFile>
       <AdditionalOptions>
       </AdditionalOptions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)3rd_party\mysql\lib;$(SolutionDir)3rd_party\pthread\lib\x86;$(SolutionDir)bin\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>

@@ -976,15 +976,15 @@ char* CWorldServer::GetSTLSkillByID(UINT idorg)
         return STLNameList[1];
     }
 
-    UINT id=SkillList[idorg]->STLId;
-    if(id==0)
+    UINT id = SkillList[idorg]->STLId;
+    if(id == 0)
     {
         return STLNameList[0];
     }
 
-    UINT idu=17*100000+id;
+    UINT idu = 17 * 100000 + id;
 
-    if(STLNameList.find(idu)==STLNameList.end())
+    if(STLNameList.find(idu) == STLNameList.end())
     {
         Log(MSG_INFO,"[STL] Skill %i not found",id);
         return STLNameList[0];

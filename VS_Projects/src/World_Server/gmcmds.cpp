@@ -677,7 +677,7 @@ bool CWorldServer::pakGMCommand( CPlayer* thisclient, CPacket* P )
     if(strcmp(command, "serverdebug")==0)
     {
         //devs only
-        if(thisclient->Session->accesslevel <= 900)
+        if(thisclient->Session->accesslevel < 900)
 	       return true;
         char buffer2[200];
         if( GServer->ServerDebug )
