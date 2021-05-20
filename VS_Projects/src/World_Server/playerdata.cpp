@@ -859,20 +859,20 @@ void CPlayer::savedata( )
 
         //long int hp = Stats->HP;
         long long hp = Stats->HP;
-    	if(hp<=0)
-    	   hp=Stats->MaxHP * 10 / 100;
-	   if(Stats->MP<0)
-	       Stats->MP=0;
+    	if(hp <= 0)
+    	   hp = Stats->MaxHP * 10 / 100;
+	   if(Stats->MP < 0)
+	       Stats->MP = 0;
 
         //LMA: bonus XP (coupon)
-        int temp_xp=bonusxp;
-        time_t temp_timer=timerxp;
-        if(once)    {temp_xp=0; temp_timer=0;}
+        int temp_xp = bonusxp;
+        time_t temp_timer = timerxp;
+        if(once)    {temp_xp = 0; temp_timer = 0;}
 
         //Medal of Fortune
         int temp_ddrop = bonusddrop;
-        time_t temp_timer_ddrop=timerddrop;
-        if(once_ddrop)  {temp_ddrop=0; temp_timer_ddrop=0;}
+        time_t temp_timer_ddrop = timerddrop;
+        if(once_ddrop)  {temp_ddrop = 0; temp_timer_ddrop = 0;}
 
         //Medal of Excellence
         int temp_statdrop=bonusstatdrop;
@@ -884,16 +884,16 @@ void CPlayer::savedata( )
         time_t temp_timer_graydrop=timergraydrop;
         if(once_graydrop)  {temp_graydrop=0; temp_timer_graydrop=0;}
 
-
-        //LMA: new save.
+		
+		//LMA: new save.
         //GServer->DB->QExecute("UPDATE characters SET classid=%i,level=%i,zuly=%i,curHp=%i,curMp=%i,str=%i,con=%i,dex=%i,_int=%i,cha=%i,sen=%i,exp=%i,skillp=%i,statp=%i, stamina=%i,quickbar='%s',respawnid=%i,clanid=%i,clan_rank=%i, townid=%i, rewardpoints=%i, bonusxp=%i, timerxp=%i, shoptype=%i, timershop=%i, unionid=%i, unionfame=%i, union01=%i, union02=%i, union03=%i, union04=%i, union05=%i WHERE id=%i",
-        GServer->DB->QExecute("UPDATE characters SET classid=%i,level=%i,zuly=%I64i,curHp=%i,curMp=%i,str=%i,con=%i,dex=%i,_int=%i,cha=%i,sen=%i,exp=%i,skillp=%i,statp=%i, stamina=%i,quickbar='%s',respawnid=%i,clanid=%i,clan_rank=%i, townid=%i, rewardpoints=%i, bonusxp=%i, timerxp=%i, shoptype=%i, timershop=%i, unionid=%i, unionfame=%i, union01=%i, union02=%i, union03=%i, union04=%i, union05=%i, bonusddrop=%i, timerddrop=%i, bonusstatdrop=%i, timerstatdrop=%i, bonusgraydrop=%i, timergraydrop=%i WHERE id=%i",
+        GServer->DB->QExecute("UPDATE characters SET classid=%i,level=%i,zuly=%I64i,curHp=%i,curMp=%i,str=%i,con=%i,dex=%i,_int=%i,cha=%i,sen=%i,exp=%i,skillp=%i,statp=%i, stamina=%i, quickbar='%s', respawnid=%i, clanid=%i, clan_rank=%i, townid=%i, rewardpoints=%i, bonusxp=%i, timerxp=%I64i, shoptype=%i, timershop=%I64i, unionid=%i, unionfame=%i, union01=%i, union02=%i, union03=%i, union04=%i, union05=%i, bonusddrop=%i, timerddrop=%I64i, bonusstatdrop=%i, timerstatdrop=%I64i, bonusgraydrop=%i, timergraydrop=%I64i WHERE id=%i",
 
                     CharInfo->Job,Stats->Level, CharInfo->Zulies, (UINT) hp, (UINT) Stats->MP,
                     Attr->Str,Attr->Con,Attr->Dex,Attr->Int,Attr->Cha,Attr->Sen,
                     (UINT) CharInfo->Exp,CharInfo->SkillPoints,CharInfo->StatPoints,CharInfo->stamina,
-                    quick,Position->respawn,Clan->clanid,Clan->clanrank,Position->saved,CharInfo->rewardpoints,temp_xp,temp_timer,Shop->ShopType,Shop->mil_shop_time,
-                    CharInfo->unionid,CharInfo->unionfame,CharInfo->union01,CharInfo->union02,CharInfo->union03,CharInfo->union04,CharInfo->union05,
+                    quick, Position->respawn, Clan->clanid,Clan->clanrank, Position->saved ,CharInfo->rewardpoints, temp_xp, temp_timer, Shop->ShopType, Shop->mil_shop_time,
+                    CharInfo->unionid, CharInfo->unionfame, CharInfo->union01, CharInfo->union02, CharInfo->union03, CharInfo->union04, CharInfo->union05,
                     temp_ddrop,temp_timer_ddrop,temp_statdrop,temp_timer_statdrop,temp_graydrop,temp_timer_graydrop,CharInfo->charid);
 
         //Storage Expansion Save

@@ -1242,10 +1242,11 @@ bool CWorldServer::pakGMCommand( CPlayer* thisclient, CPacket* P )
     {
         if(Config.Command_go > thisclient->Session->accesslevel)
 	       return true;
-        if ((tmp = strtok(NULL, " ")) == NULL) tmp = 0; 
-			int loc = atoi(tmp);
-        if(Config.Command_Go > thisclient->Session->accesslevel)
-            return true;
+		int loc = 0;
+		if ((tmp = strtok(NULL, " ")) == NULL) 
+			tmp = 0; 
+		else	
+			loc = atoi(tmp);
         int x = 0;
         int y = 0;
         int map = 0;
